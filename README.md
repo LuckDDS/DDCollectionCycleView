@@ -4,4 +4,3 @@ CollectionView实现的一款轮播图,喜欢点赞
 ![image](https://github.com/LuckDDS/DDCollectionCycleView/tree/master/AdvancePlan/AdvancePlan/1.jpg)
 ![jpg](https://github.com/LuckDDS/DDCollectionCycleView/tree/master/AdvancePlan/AdvancePlan/2.jpg)
 ![png](https://github.com/LuckDDS/DDCollectionCycleView/tree/master/AdvancePlan/AdvancePlan/3.png)
-![gif](https://github.com/LuckDDS/DDCollectionCycleView/tree/master/AdvancePlan/AdvancePlan/brief.gif)
