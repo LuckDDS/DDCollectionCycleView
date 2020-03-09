@@ -26,9 +26,12 @@
 		4587BBEA23FF784100685367 /* AdvancePlanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BBE923FF784100685367 /* AdvancePlanUITests.m */; };
 		4587BBF923FF795A00685367 /* DDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BBF823FF795A00685367 /* DDNavigationController.m */; };
 		4587BC0423FFA80200685367 /* DDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BC0323FFA80200685367 /* DDRootViewController.m */; };
+		45ACC183240CB139007655D9 /* DDCIFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */; };
+		45B9F6F5241622D00085E6EC /* DDVisionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B9F6F4241622D00085E6EC /* DDVisionController.m */; };
 		45CAB0FF24068DEB00B639A6 /* DDCollectionCycleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CAB0FE24068DEB00B639A6 /* DDCollectionCycleController.m */; };
 		45CAB10524069FBB00B639A6 /* DDCollectionCycleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CAB10424069FBB00B639A6 /* DDCollectionCycleLayout.m */; };
 		45CAB1082406A09F00B639A6 /* DDCollectionViewCycleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CAB1072406A09F00B639A6 /* DDCollectionViewCycleCell.m */; };
+		45EEE2FE240FB48700C11ED8 /* DDFaceFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EEE2FD240FB48700C11ED8 /* DDFaceFeature.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,12 +89,18 @@
 		4587BBF823FF795A00685367 /* DDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDNavigationController.m; sourceTree = "<group>"; };
 		4587BC0223FFA80200685367 /* DDRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDRootViewController.h; sourceTree = "<group>"; };
 		4587BC0323FFA80200685367 /* DDRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDRootViewController.m; sourceTree = "<group>"; };
+		45ACC181240CB139007655D9 /* DDCIFeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCIFeatureViewController.h; sourceTree = "<group>"; };
+		45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCIFeatureViewController.m; sourceTree = "<group>"; };
+		45B9F6F3241622D00085E6EC /* DDVisionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDVisionController.h; sourceTree = "<group>"; };
+		45B9F6F4241622D00085E6EC /* DDVisionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDVisionController.m; sourceTree = "<group>"; };
 		45CAB0FD24068DEB00B639A6 /* DDCollectionCycleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionCycleController.h; sourceTree = "<group>"; };
 		45CAB0FE24068DEB00B639A6 /* DDCollectionCycleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionCycleController.m; sourceTree = "<group>"; };
 		45CAB10324069FBB00B639A6 /* DDCollectionCycleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionCycleLayout.h; sourceTree = "<group>"; };
 		45CAB10424069FBB00B639A6 /* DDCollectionCycleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionCycleLayout.m; sourceTree = "<group>"; };
 		45CAB1062406A09F00B639A6 /* DDCollectionViewCycleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionViewCycleCell.h; sourceTree = "<group>"; };
 		45CAB1072406A09F00B639A6 /* DDCollectionViewCycleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionViewCycleCell.m; sourceTree = "<group>"; };
+		45EEE2FC240FB48700C11ED8 /* DDFaceFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDFaceFeature.h; sourceTree = "<group>"; };
+		45EEE2FD240FB48700C11ED8 /* DDFaceFeature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDFaceFeature.m; sourceTree = "<group>"; };
 		72E9ED04FD21E823A70E2709 /* Pods-AdvancePlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancePlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancePlan/Pods-AdvancePlan.debug.xcconfig"; sourceTree = "<group>"; };
 		FC96F76DBD2FA9472E7F44D4 /* Pods-AdvancePlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancePlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancePlan/Pods-AdvancePlan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +240,8 @@
 		4587BBFE23FFA77500685367 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				45B9F6F2241622B80085E6EC /* Vision */,
+				45ACC180240CB11C007655D9 /* CIFeature */,
 				45CAB0FC24068DAC00B639A6 /* CollectionCycleView */,
 				451F5D542404CCAD00DC417E /* CollectionViewLayout */,
 				4587BC0123FFA7C200685367 /* Desk */,
@@ -252,6 +263,26 @@
 				45789ABB23FFC9170016111B /* DDCollectionReusableView.m */,
 			);
 			path = Desk;
+			sourceTree = "<group>";
+		};
+		45ACC180240CB11C007655D9 /* CIFeature */ = {
+			isa = PBXGroup;
+			children = (
+				45ACC181240CB139007655D9 /* DDCIFeatureViewController.h */,
+				45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */,
+				45EEE2FC240FB48700C11ED8 /* DDFaceFeature.h */,
+				45EEE2FD240FB48700C11ED8 /* DDFaceFeature.m */,
+			);
+			path = CIFeature;
+			sourceTree = "<group>";
+		};
+		45B9F6F2241622B80085E6EC /* Vision */ = {
+			isa = PBXGroup;
+			children = (
+				45B9F6F3241622D00085E6EC /* DDVisionController.h */,
+				45B9F6F4241622D00085E6EC /* DDVisionController.m */,
+			);
+			path = Vision;
 			sourceTree = "<group>";
 		};
 		45CAB0FC24068DAC00B639A6 /* CollectionCycleView */ = {
@@ -427,7 +458,9 @@
 				4587BC0423FFA80200685367 /* DDRootViewController.m in Sources */,
 				45CAB1082406A09F00B639A6 /* DDCollectionViewCycleCell.m in Sources */,
 				451F5D612404FF8D00DC417E /* NSString+Extention.m in Sources */,
+				45B9F6F5241622D00085E6EC /* DDVisionController.m in Sources */,
 				45CAB10524069FBB00B639A6 /* DDCollectionCycleLayout.m in Sources */,
+				45EEE2FE240FB48700C11ED8 /* DDFaceFeature.m in Sources */,
 				4513F3D02408BE3F0011473C /* DDCollectionCycleBackView.m in Sources */,
 				451F5D5D2404D10900DC417E /* DDCollectionViewLayoutCell.m in Sources */,
 				4587BBCD23FF783F00685367 /* AdvancePlan.xcdatamodeld in Sources */,
@@ -435,6 +468,7 @@
 				45789ABC23FFC9170016111B /* DDCollectionReusableView.m in Sources */,
 				451F5D5A2404D0AA00DC417E /* DDCollectionViewLayout.m in Sources */,
 				4587BBF923FF795A00685367 /* DDNavigationController.m in Sources */,
+				45ACC183240CB139007655D9 /* DDCIFeatureViewController.m in Sources */,
 				4587BBD523FF784100685367 /* main.m in Sources */,
 				4587BBC423FF783F00685367 /* AppDelegate.m in Sources */,
 			);

@@ -12,6 +12,8 @@
 #import "DDCollectionReusableView.h"
 #import "DDCollectionLayoutController.h"
 #import "DDCollectionCycleController.h"
+#import "DDCIFeatureViewController.h"
+#import "DDVisionController.h"
 @interface DDHomeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *homeCollectionView;
@@ -27,7 +29,6 @@
     
     [super viewDidLoad];
     self.navigationItem.title = @"首页";
-    self.view.backgroundColor = [UIColor whiteColor];
     
     [self requestData];
     [self buildHomeView];
@@ -35,13 +36,17 @@
 }
 
 - (void)requestData{
-    NSArray *headers = @[@"UICollectionViewLayout"];
+    NSArray *headers = @[@"UICollectionViewLayout",@"CIFeature",@"Vision"];
     
     for (int i = 0; i < headers.count; i ++) {
         NSMutableDictionary * unitDict = [NSMutableDictionary new];
         [unitDict setValue:[NSString stringWithFormat:@"%@",headers[i]] forKey:@"headerName"];
         if (i == 0) {
             [unitDict setValue:@[@"自定义瀑布流",@"轮播图"] forKey:@"content"];
+        }else if (i == 1){
+            [unitDict setValue:@[@"CIFeatureTypeFace(人脸识别)"] forKey:@"content"];
+        }else if (i == 2){
+            [unitDict setValue:@[@"Vision"] forKey:@"content"];
         }
         [self.allDataArr addObject:unitDict];
     }
@@ -86,6 +91,13 @@
             DDCollectionCycleController *cycleController = [[DDCollectionCycleController alloc]init];
             [self.navigationController pushViewController:cycleController animated:YES];
         }
+    }else if (indexPath.section == 1){
+        DDCIFeatureViewController *featureController = [[DDCIFeatureViewController alloc]init];
+        featureController.featureType = indexPath.row;
+        [self.navigationController pushViewController:featureController animated:YES];
+    }else if (indexPath.section == 2){
+        DDVisionController *visionController = [[DDVisionController alloc]init];
+        [self.navigationController pushViewController:visionController animated:YES];
     }
 }
 

@@ -29,7 +29,6 @@
     
     [super viewDidLoad];
     self.navigationItem.title = @"自定义瀑布流";
-    self.view.backgroundColor = [UIColor whiteColor];
     [self requestData];
     [self buildHomeView];
     // Do any additional setup after loading the view.

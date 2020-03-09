@@ -28,19 +28,18 @@
     [self requestData];
     
     self.navigationItem.title = @"轮播图";
-    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 
 //构造数据
 - (void)requestData{
-
+    
     NSDictionary *dict = @{@"img":@"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1033149918,3501644543&fm=26&gp=0.jpg",@"other":@"第一项"};
     NSDictionary *dict1 = @{@"img":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582880058590&di=53594705a5504fde6b98acebe0467ccf&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fsoftbbs%2F1001%2F14%2Fc0%2F2738692_1263465880033_1024x1024.jpg",@"other":@"第二项"};
     NSDictionary *dict2 = @{@"img":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582880058592&di=d64472950092117a75b2cf206940fd1d&imgtype=0&src=http%3A%2F%2Fimg8.zol.com.cn%2Fbbs%2Fupload%2F21909%2F21908582.jpg",@"other":@"第三项"};
     NSDictionary *dict3 = @{@"img":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582880058592&di=a384a4b24431d9400eb86f2e27917204&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F45%2F31188%2Fe0c62a154c0bed1e.jpg",@"other":@"第四项"};
     NSDictionary *dict4 = @{@"img":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582880058591&di=3b83628242e9e765a0b6c7b06ba12dec&imgtype=0&src=http%3A%2F%2Fimg8.zol.com.cn%2Fbbs%2Fupload%2F18894%2F18893697.jpg",@"other":@"第五项"};
-
+    
     NSArray *allData = @[dict,
                          dict1,
                          dict2,
@@ -90,7 +89,7 @@
         _cycleCollectionView = [[DDCollectionCycleBackView alloc]initWithFrame:CGRectMake(0, 84, self.view.frame.size.width, self.view.frame.size.width*9/16)];
         
         //cycleViewType:设置轮播图的样式
-        _cycleCollectionView.cycleViewType = DDCollectionCycleViewScale;
+//        _cycleCollectionView.cycleViewType = DDCollectionCycleViewScale;
         
 //        //scaleMultiple:cell缩小/放大的基本倍数
 //        _cycleCollectionView.scaleMultiple = 0.6;
