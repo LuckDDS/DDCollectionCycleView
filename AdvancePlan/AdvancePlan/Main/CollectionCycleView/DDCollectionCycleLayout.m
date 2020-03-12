@@ -130,7 +130,6 @@
             
         }
         
-        
     }
     
     return [attributesArr copy];

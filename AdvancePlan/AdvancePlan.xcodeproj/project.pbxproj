@@ -26,6 +26,7 @@
 		4587BBEA23FF784100685367 /* AdvancePlanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BBE923FF784100685367 /* AdvancePlanUITests.m */; };
 		4587BBF923FF795A00685367 /* DDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BBF823FF795A00685367 /* DDNavigationController.m */; };
 		4587BC0423FFA80200685367 /* DDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BC0323FFA80200685367 /* DDRootViewController.m */; };
+		459FE470241884B8004317BB /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 459FE46F241884B8004317BB /* MobileNetV2.mlmodel */; };
 		45ACC183240CB139007655D9 /* DDCIFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */; };
 		45B9F6F5241622D00085E6EC /* DDVisionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B9F6F4241622D00085E6EC /* DDVisionController.m */; };
 		45CAB0FF24068DEB00B639A6 /* DDCollectionCycleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CAB0FE24068DEB00B639A6 /* DDCollectionCycleController.m */; };
@@ -89,6 +90,7 @@
 		4587BBF823FF795A00685367 /* DDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDNavigationController.m; sourceTree = "<group>"; };
 		4587BC0223FFA80200685367 /* DDRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDRootViewController.h; sourceTree = "<group>"; };
 		4587BC0323FFA80200685367 /* DDRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDRootViewController.m; sourceTree = "<group>"; };
+		459FE46F241884B8004317BB /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		45ACC181240CB139007655D9 /* DDCIFeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCIFeatureViewController.h; sourceTree = "<group>"; };
 		45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCIFeatureViewController.m; sourceTree = "<group>"; };
 		45B9F6F3241622D00085E6EC /* DDVisionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDVisionController.h; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				45B9F6F3241622D00085E6EC /* DDVisionController.h */,
 				45B9F6F4241622D00085E6EC /* DDVisionController.m */,
+				459FE46F241884B8004317BB /* MobileNetV2.mlmodel */,
 			);
 			path = Vision;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459FE470241884B8004317BB /* MobileNetV2.mlmodel in Sources */,
 				45CAB0FF24068DEB00B639A6 /* DDCollectionCycleController.m in Sources */,
 				45789AB923FFBE760016111B /* DDCollectionViewCell.m in Sources */,
 				45789AB323FFA89A0016111B /* DDHomeController.m in Sources */,
@@ -568,7 +572,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -621,7 +625,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -635,6 +639,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UWL872P7WZ;
 				INFOPLIST_FILE = AdvancePlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
