@@ -7,14 +7,15 @@
 //
 
 #import "DDVisionController.h"
-#import <AVKit/AVKit.h>
 #import <Vision/Vision.h>
-#import <CoreML/CoreML.h>
+#import <AVKit/AVKit.h>
 #import "MobileNetV2.h"
 
 @interface DDVisionController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
+@property (nonatomic, strong)NSMutableArray *allPoints;
 @end
+
 
 @implementation DDVisionController
 {
@@ -27,36 +28,28 @@
     float playerWidth;
     float playerHeight;
     
-    UILabel *testLab;
-    
-    CIImage *image;
-    CIContext *context;
-    MobileNetV2 *model;
-    MobileNetV2Output *outPut;
-
+    BOOL isEnd;
+    NSMutableSet *allPoints;
+    NSMutableArray *allFeatures;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    context = [CIContext context];
+    allPoints = [[NSMutableSet alloc]init];
     self.navigationController.navigationBar.hidden = YES;
-    model = [[MobileNetV2 alloc]init];
-    
-//    NSError *mlError;
-//    MLModel *model = [MLModel modelWithContentsOfURL:[NSURL fileURLWithPath:@"MobileNetV2.mlmodel" isDirectory:YES] error:&mlError];
-//    if (mlError) {
-//        NSLog(@"加载model出错");
-//    }
-//
-//    NSError *error;
-//    VNCoreMLModel *mlModel = [VNCoreMLModel modelForMLModel:model error:&error];
-//
-//    VNFaceLandmarks *faceLandMark = [VNFaceLandmarks2D alloc];
-//    VNDetectFaceLandmarksRequest *s;
-////    VNDetectFaceLandmarksRequestRevision1 d;
-////    VNDetectHorizonRequest f;
-//    VNCoreMLModel *mdel;
+    allFeatures = [NSMutableArray array];
+    self.allPoints;
+    isEnd = YES;
     [self buildCamera];
     [self buildBtn];
+    for (int m = 0; m < 65; m ++) {
+        UILabel * lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 8, 8)];
+        lab.backgroundColor = [UIColor redColor];
+        lab.layer.masksToBounds = YES;
+        lab.layer.cornerRadius = 4;
+        [self.view addSubview:lab];
+        [allFeatures addObject:lab];
+    }
+    
 
     // Do any additional setup after loading the view.
 }
@@ -95,7 +88,7 @@
 - (void)buildCamera{
 
     //初始话设备
-    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionFront];
     
     AVCapturePhotoSettings *phoneSetting = [AVCapturePhotoSettings photoSettings];
     phoneSetting.flashMode = AVCaptureFlashModeAuto;
@@ -110,9 +103,9 @@
     }
     [captureSession addInput:deviceInput];
     [captureSession beginConfiguration];
-    if ([captureDevice supportsAVCaptureSessionPreset:AVCaptureSessionPreset640x480]) {
-        if ([captureSession canSetSessionPreset:AVCaptureSessionPreset640x480]) {
-            [captureSession setSessionPreset:AVCaptureSessionPreset640x480];
+    if ([captureDevice supportsAVCaptureSessionPreset:AVCaptureSessionPreset352x288]) {
+        if ([captureSession canSetSessionPreset:AVCaptureSessionPreset352x288]) {
+            [captureSession setSessionPreset:AVCaptureSessionPreset352x288];
         }
     }
     //初始话输出设备
@@ -135,7 +128,7 @@
     //设置展示图像的图层
     captureLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:captureSession];
     //设置图层的大小
-    float outPutVideoScale = 640.0 / 480.0;
+    float outPutVideoScale = 352.0 / 288.0;
     if (outPutVideoScale > self.view.frame.size.height/self.view.frame.size.width) {
         playerWidth = self.view.frame.size.width;
         playerHeight = self.view.frame.size.height;
@@ -150,100 +143,94 @@
     captureLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     //添加显示
     [self.view.layer addSublayer:captureLayer];
-    UILabel *topView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, (playerHeight-224)/2)];
-    topView.text = @"下方是被识别的区域";
-    topView.backgroundColor = [UIColor redColor];
-    [captureLayer addSublayer:topView.layer];
-    
-    UILabel *bottomView = [[UILabel alloc]initWithFrame:CGRectMake(0, playerHeight-(playerHeight-224)/2, self.view.frame.size.width, (playerHeight - 224)/2)];
-    bottomView.text = @"上方是被识别的区域";
-    bottomView.backgroundColor = [UIColor redColor];
-    [captureLayer addSublayer:bottomView.layer];
-    
-    testLab = [[UILabel alloc]initWithFrame:CGRectMake(0, playerHeight-(playerHeight-224)/2+(playerHeight - 224)/2, self.view.frame.size.width, 150)];
-    testLab.numberOfLines = 0;
-    testLab.lineBreakMode = NSLineBreakByWordWrapping;
-    testLab.textAlignment = NSTextAlignmentLeft;
-    [self.view addSubview:testLab];
     
 }
 
 - (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
-    //获取CVImageBufferRef图片缓冲区
-    CVImageBufferRef buffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    //直接转为CIImage且旋转
-    image = [[CIImage imageWithCVImageBuffer:buffer] imageByApplyingCGOrientation:kCGImagePropertyOrientationRight];
-    //创建图层
-    [context clearCaches];
-    //获取CGImageRef数据
-    CGImageRef cgImgRef = [context createCGImage:image fromRect:CGRectMake((480 - 224)/2, (640 - 224)/2, 224, 224)];
     
-    CVImageBufferRef bufferRef = [self pixelBufferFromCGImage:cgImgRef];
-    CGImageRelease(cgImgRef);
-    NSError *error;
-    outPut = [model predictionFromImage:bufferRef error:&error];
-    CVPixelBufferRelease(bufferRef);
-    if (error) {
-        NSLog(@"报错了");
-    }else{
-//        NSLog(@"这个像是什么->%@",outPut.classLabel);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self->testLab.text = self->outPut.classLabel;
-        });
+    if (isEnd) {
+        isEnd = NO;
+        //获取CVImageBufferRef图片缓冲区
+        CVImageBufferRef buffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+        //创建完成回调
+        VNRequestCompletionHandler completionHandler = ^(VNRequest *request,NSError *error){
+            if (error) {
+                NSLog(@"失败");
+            }else{
+                //识别的结果
+                [self->_allPoints removeAllObjects];
+                NSArray * allObservation = request.results;
+                CGRect boundingbox = CGRectMake(0, 0, 0, 0);
+                //获取结果中的每一个observation
+                for (VNFaceObservation *observation in allObservation) {
+                    //boundingBox是脸部整体的位置大小
+                    boundingbox = observation.boundingBox;
+                    //获取面部landMark
+                    VNFaceLandmarks2D *faceLandMark = observation.landmarks;
+                    //获取全部的点
+                    VNFaceLandmarkRegion2D *region = faceLandMark.allPoints;
+                    //一共有多少点
+                    NSInteger markNum = region.pointCount;
+
+                    for (int m = 0; m < markNum; m ++) {
+                        //normalizedPoints是一个数组指针,默认指向第一个累加即可获得其中的坐标
+                        //注意,featureLocation的范围是0-1,需要乘以图片的实际宽高
+                        CGPoint featureLocation = region.normalizedPoints[m];
+//                        [self->allPoints addObject:featureLocation];
+                        [self->_allPoints addObject:[NSValue valueWithCGPoint:featureLocation]];
+                    }
+
+                }
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [self buildFeatureOnPlayerWithBoundingbox:boundingbox];
+                    
+                });
+                
+            }
+        };
+        //创建一个面部识别的请求
+        VNDetectFaceLandmarksRequest *landmarkRequest = [[VNDetectFaceLandmarksRequest alloc]initWithCompletionHandler:completionHandler];
+        //设置返回的面部信息的点数
+        landmarkRequest.constellation = VNRequestFaceLandmarksConstellation65Points;
+        //创建一个图片资源
+        VNImageRequestHandler *imageRequestHandler = [[VNImageRequestHandler alloc]initWithCVPixelBuffer:buffer orientation:kCGImagePropertyOrientationRight options:@{}];
+        //开始识别,返回识别是否成功
+        NSError *err;
+        BOOL success = [imageRequestHandler performRequests:@[landmarkRequest] error:&err];
+        isEnd = YES;
+    
+    }
+
+}
+- (void)buildFeatureOnPlayerWithBoundingbox:(CGRect)boundingBox{
+    
+    NSInteger pointNum = _allPoints.count;
+    float tempX1 = playerWidth - playerWidth * boundingBox.origin.x;
+    float tempX2 =  playerWidth * boundingBox.size.width;
+    
+    float tempY1 = playerHeight - playerHeight * boundingBox.origin.y;
+    float tempY2 =  playerHeight * boundingBox.size.height;
+
+    for (int m = 0; m < pointNum; m ++) {
+        CGPoint point = [_allPoints[m] CGPointValue];
+        UILabel * lab = allFeatures[m];
+        //因为使用的是前置摄像头所以导致坐标方位全部颠倒,所以要计算x和y的位置
+        float x = tempX1 - tempX2 * point.x;
+        float y = tempY1 -tempY2 * point.y;
+
+        lab.center = CGPointMake(x, y);
     }
 
 }
 
-- (CVPixelBufferRef) pixelBufferFromCGImage: (CGImageRef) image
-{
-    NSDictionary *options = @{
-                              (NSString*)kCVPixelBufferCGImageCompatibilityKey : @YES,
-                              (NSString*)kCVPixelBufferCGBitmapContextCompatibilityKey : @YES,
-                              (NSString*)kCVPixelBufferIOSurfacePropertiesKey: [NSDictionary dictionary]
-                              };
-    CVPixelBufferRef pxbuffer = NULL;
-    
-    CGFloat frameWidth = CGImageGetWidth(image);
-    CGFloat frameHeight = CGImageGetHeight(image);
-    
-    CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault,
-                                          frameWidth,
-                                          frameHeight,
-                                          kCVPixelFormatType_32BGRA,
-                                          (__bridge CFDictionaryRef) options,
-                                          &pxbuffer);
-    
-    NSParameterAssert(status == kCVReturnSuccess && pxbuffer != NULL);
-    
-    CVPixelBufferLockBaseAddress(pxbuffer, 0);
-    void *pxdata = CVPixelBufferGetBaseAddress(pxbuffer);
-    NSParameterAssert(pxdata != NULL);
-    
-    CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    CGContextRef context = CGBitmapContextCreate(pxdata,
-                                                 frameWidth,
-                                                 frameHeight,
-                                                 8,
-                                                 CVPixelBufferGetBytesPerRow(pxbuffer),
-                                                 rgbColorSpace,
-                                                 (CGBitmapInfo)kCGImageAlphaNoneSkipFirst);
-    NSParameterAssert(context);
-    CGContextConcatCTM(context, CGAffineTransformIdentity);
-    CGContextDrawImage(context, CGRectMake(0,
-                                           0,
-                                           frameWidth,
-                                           frameHeight),
-                       image);
-    CGColorSpaceRelease(rgbColorSpace);
-    CGContextRelease(context);
-    CVPixelBufferUnlockBaseAddress(pxbuffer, 0);
-    
-    return pxbuffer;
+- (NSMutableArray *)allPoints{
+    if (!_allPoints) {
+        _allPoints = [NSMutableArray array];
+    }
+    return _allPoints;
 }
-
-
-
 /*
 #pragma mark - Navigation
 

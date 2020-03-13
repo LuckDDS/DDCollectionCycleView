@@ -14,6 +14,7 @@
 #import "DDCollectionCycleController.h"
 #import "DDCIFeatureViewController.h"
 #import "DDVisionController.h"
+#import "DDMobileNetController.h"
 @interface DDHomeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *homeCollectionView;
@@ -46,7 +47,7 @@
         }else if (i == 1){
             [unitDict setValue:@[@"CIFeatureTypeFace(人脸识别)"] forKey:@"content"];
         }else if (i == 2){
-            [unitDict setValue:@[@"Vision"] forKey:@"content"];
+            [unitDict setValue:@[@"Vision",@"MobileNet"] forKey:@"content"];
         }
         [self.allDataArr addObject:unitDict];
     }
@@ -96,8 +97,13 @@
         featureController.featureType = indexPath.row;
         [self.navigationController pushViewController:featureController animated:YES];
     }else if (indexPath.section == 2){
-        DDVisionController *visionController = [[DDVisionController alloc]init];
-        [self.navigationController pushViewController:visionController animated:YES];
+        if (indexPath.row == 0) {
+            DDVisionController *visionController = [[DDVisionController alloc]init];
+            [self.navigationController pushViewController:visionController animated:YES];
+        }else{
+            DDMobileNetController *mobileController = [[DDMobileNetController alloc]init];
+            [self.navigationController pushViewController:mobileController animated:YES];
+        }
     }
 }
 

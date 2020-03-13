@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "420AEC6E-5C51-40CF-82A6-504E4B18DB2B"
+            uuid = "70B6A157-3E94-4D99-B2FA-A2F763035537"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdvancePlan/Main/Vision/DDVisionController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-buildCamera"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "-captureOutput:didOutputSampleBuffer:fromConnection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8EE5A3AF-A438-4B71-9592-08EF74C76D61"
+            uuid = "26F8D4EA-CE48-427A-93CF-61495AFC2812"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdvancePlan/Main/Vision/DDVisionController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "-pixelBufferFromCGImage:"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "-buildFeatureOnPlayerWithBoundingbox:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
