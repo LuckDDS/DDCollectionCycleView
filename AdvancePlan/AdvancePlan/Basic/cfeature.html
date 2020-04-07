@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="back">
+        <div class="header">C语言特性</div>
+        <h3>一.函数</h3>
+        <p><code>1.如果声明函数时指定的返回值类型与return语句实际返回的数据类型不匹配,那么此时将以声明函数时指定的返回值的类型为准,系统会自动转换.</code></p>
+        <p><code>2.Objective-C里函数的参数传递传递方式只有一种:值传递.所谓的值传递就是将实参拷贝一份副本传入函数,而参数本身不会受影响</code></p>
+        <pre><code>
+举例
+@interface DataTest:NSObject
+@property int a;
+@property int b;
+@end
+@implementation DataTest
+@end
+
+int main(int argc,char *argv[]){
+    @autorreleasepool{
+        void swap(int ,int);
+        void changeText(NSString *);
+        int a = 6;
+        int b = 9;
+        swap(a,b);
+        NSLog(@"%d,%d",a,b);//a = 6,b = 9;从此可以证明传递的是值
+
+        //再举例指针类型,C语言中指针传递的也是一个副本,只不过传递的是当前str的指针的副本,
+        //指针的地址改变了但是指向的数据的地址依旧是原始数据的地址,所以导致原始数据跟随改变,
+        //C语言中值会改变也是有条件的,当直接改变参数指针的指向时是不会影响原始数据的
+
+        //OC中传递的是值,指针类型传递的是指针的副本也是值,不会影响到原始数据(有条件的)
+        (1).当改变的是传递的指针的指向时是不会影响原始数据的
+        (2).当改变的是传递的指针指向的对象的其他属性时会影响原始数据
+
+        NSString *str = @"123456789";
+        //这个时候传递的是str副本的的指针地址,这个地址指向的是str的值@"123456789"的存储位置
+        //假设指针地址为0x100000,数据的地址为0x1111111
+        changeText(str);
+
+
+        DataTest *test = [[DataTest alloc]init];
+        test.a = 10;
+        test.b = 20;
+        NSLog(@"%d,%d",test.a,test.b);//a = 10,b = 20;
+        testObject(test);
+        NSLog(@"%d,%d",test.a,test.b);//a = 30,b = 40;
+        //这个时候会变是由于使用.语法的时候使用的是test指向的对象,
+        所以传参过去复制了一份地址,但是指向的内容还是test的对象.
+
+
+        NSArray *arr = @[@"1",@"2",@"3"];
+        NSMutableArray * arr1 = [NSMutableArray arrayWithArray:@[@"00",@"111",@"222"]];
+        NSLog(@"%p,%p,%p",arr1,arr1[0],&arr1);
+        NSLog(@"%p,%p,%p",arr,arr[0],&arr);
+        /**
+        0x28142d530,0x10069d840,0x16f7a38f0
+        0x28142d650,0x10069d7e0,0x16f7a38f8
+        */
+        //C语言的数组的地址是数组元素的首地址,从上面的地址看出,
+        //OC的数组和C的不同,OC数组是一个对象有自己的地址.里面存储的数据每个都有自己的地址,
+
+        [self testData:arr withMutableArr:arr1];
+        NSLog(@"%p,%p,%p",arr1,arr1[0],&arr1);
+        NSLog(@"%p,%p,%p",arr,arr[0],&arr);
+        /**
+        0x28142d530,0x10069d8e0,0x16f7a38f0
+        0x28142d650,0x10069d7e0,0x16f7a38f8
+        */
+
+    }
+}
+
+- (void)testData:(NSArray*)arr withMutableArr:(NSMutableArray*)mutableArr{
+    NSLog(@"%p,%p,%p",mutableArr,mutableArr[0],&mutableArr);
+    NSLog(@"%p,%p,%p",arr,arr[0],&arr);
+    /**
+     0x28142d530,0x10069d840,0x16f7a37c0
+     0x28142d650,0x10069d7e0,0x16f7a37c8
+     */
+    //从数据上可以看出传递过来的指针是复制了一份指针,指针不同了,但是依旧指向的原始数据存储的地址
+
+    //数组这里是直接重新指向了一块内存
+    arr = @[@"222",@"333",@"123123"];
+    mutableArr[0] = @"333";
+    [mutableArr setObject:@"00000" atIndexedSubscript:0];
+    NSLog(@"%p,%p,%p",mutableArr,mutableArr[0],&mutableArr);
+    NSLog(@"%p,%p,%p",arr,arr[0],&arr);
+    /**
+     0x28142d530,0x10069d8e0,0x16f7a37c0
+     0x28142a010,0x10069d860,0x16f7a37c8
+     */
+     //对不可变数组重新赋值,相当于将arr指向的存储地址换了,arr的存储的指针地址与原始数据的不同,所以不会影响原始数据
+     //对于可变数组mutableArr是一个对象,改变对象里面的数据原始数据会受到影响.如果将数组整体赋值,原始数据是不会受影响的
+}
+
+void swap(int a,int b){
+    int tmp = a;
+    a = b;
+    b = tmp;
+    NSLog(@"%d,%d",a,b);//a = 9,b = 6
+}
+void changeText(NSString *str){
+    //打印str的指针地址不是0x100000,但是指针指向数据的地址还是之前的地址0x1111111
+    NSLog(@"%p,%p",&str,str);
+    //下面的操作相当于给参数str的指针指向了一块新的内存地址,
+    //对原来的没有任何影响,如果对str地址中的内存进行操作会影响到原始数据的
+    str = @"11111";
+}
+void testObject(DataTest *test){
+    //test的地址与之前的不同,但是指向的对象是一样的
+    NSLog(@"%d,%d",test.a,test.b);//a = 30,b = 40;
+    //给a,b赋值的时候用的是test对象.所以原始数据的值都会变
+    test.a = 30;
+    test.b = 40;
+}
+
+</code></pre>
+<p><code>3.C语言中数组当做参数传入函数中传递的是指针,该指针指向数组的首地址,操作的时候改变的是指针指向的存储数据,因此函数中改变数组元素会对数组本身有影响,但是在OC中这一理论不通用.</code></p>
+<p><code>4.内部函数,定义函数时使用static修饰,该函数只能被当前源文件访问</code></p>
+<p><code>5.外部函数,定义函数是使用extern修饰,或者不使用修饰符,该函数可以被任意的源文件使用</code></p>
+<h3>二.局部变量和外部变量</h3>
+<p><code>1.局部变量,在函数内定义的变量为局部变量.在函数内部可以使用extern修饰局部变量,让其变成全局变量,这个变量可以被任意的源程序文件访问</code></p>
+<p><code>2.全局变量,在函数外定义的变量默认不需要使用修饰词或者使用extern修饰,如果希望全局变量的作用域限制在该源程序使用,即只能在本文件中使用则可以使用static修饰该全局变量.</code></p>
+<h3>三.宏</h3>
+<p><code>1.不带参宏定义 #define 宏名称 宏代表的内容</code></p>
+<pre><code>
+#define YES 1
+#define定义宏 #undef提前结束宏定义
+
+</code></pre>
+<p><code>2.带参数的宏定义 #define 宏名称(参数列表) 字符串(需要操作的内容)</code></p>
+<pre><code>
+#define PI 3.1415926
+#define GIRTH(r) PI * 2 * (r);
+#define AREA(r) PI * (r) * (r)
+//定义宏的时候参数需要带括号,避免出错
+
+</code></pre>
+<p><code>3.#ifdef,#ifndef,#else,#endif执行条件编译,这几种方式的条件只能是宏</code></p>
+<pre><code>
+#ifdef 宏名称
+//任意语句1
+#else
+//任意语句2
+#endif
+//上面的宏定义为如果有这个宏就执行任意语句1 
+
+#ifndef 宏名称
+//任意语句1
+#else
+//任意语句2
+#endif
+//上面的宏定义为如果没有这个宏就执行任意语句1
+
+</code></pre>
+<p><code>4.#if,#elif,#else,#endif执行条件编译,这个判断条件不一定是宏,可以使指定的表达式</code></p>
+<pre><code>
+#if 表达式
+//任意语句
+#elif 表达式1
+//任意语句
+#else(这个else可以省略)
+//任意语句
+#endif
+
+</code></pre>
+<h3>四.指针</h3>
+<p><code>1.指针的概念</code></p>
+<pre><code>
+(1).操作系统分为32位和64位,32位的最多只能支持4GB的内存,因为计算机底层并不使用十进制,
+使用的是二进制,32位的二进制只能支持4G个编号,这意味着操作系统只能为4GB的内存单元编号,因此32位的
+操作系统最多只能支持4GB的内存,多余的内存不会有编号,因此无法将数据存入这些内存单元中.
+(2).变量的内存地址就是该变量的指针;而用于保存内存地址(指针)的变量就是指针变量,指针变量指向的地址就是存储的数据
+(3).&:取地址运算符,后面常跟变量,该运算符用于读取该变量所在的内存地址.
+(4).*:取变量运算符,后面通常紧跟一个指针变量,该运算符用于读取该指针变量所指的变量
+(5).指针运算符&和*是从右往左运算,他们的优先级相同
+举例
+void test(){
+    int a = 200;
+    int *p;
+    p = &a;
+    NSLog(@"%d",*p);//200
+    而且a == *&a;
+}
+(6).C语言调用函数时的传参机制总是值传递,只是当使用指针作为参数时,由于指针变量本身保存的就是地址,
+因此此时的传参机制也被称为地址传递
+
+</code></pre>
+<p><code>2.指针与数组</code></p>
+<pre><code>
+(1).数组中第一个元素的地址被称为数组的首地址,数组的首地址会被当做数组地址,
+C语言规定:数组变量的本质就是一个指针常量,保存了指向第一个数组元素的指针;
+举例
+void test(){
+    int arr[] = {4,12,34,6,7,788};
+    int *p = arr;//得到的是arr的地址
+    int *m = &arr[0];//得到的是arr数组第一个元素的地址
+    NSLog(@"%p,%p",p,m);//可以得出p和m是相等的
+}
+(2).指针变量的赋值方式
+p = &a;将一个已有变量的内存地址赋给指针变量p
+p = &arr[i];将某个数组元素的内存地址赋给指针变量p
+p = arr;将arr数组的首地址赋给指针变量p
+p = pt;将指针变量pt中保存的地址赋值给指针变量p
+(3).指针可以进行加减运算,当指针指向同一个数组时两个指针相减返回两个指针所指数组之间的元素个数,
+如果两个指针不指向同一个数组,那么两个指针变量相减没有任何意义
+(4).指针变量加减一个整数,p(指针)(+/-)n(整数)计算方式为,指针地址 (+/-) n * 变量占有的字节数
+(5).sizeof的用法
+每种类型的数据在内存单元中占有的字节数是固定的,因此sizeof(arr)/sizeof(arr[0]) = 数组的元素的个数
+sizeof(arr):获取的是数组总共占有多少字节
+sizeof(arr[0]):获取的是数组中一个元素占有的字节数
+C语言中的数组是静态的,不要尝试通过指针给数组元素重新赋值
+(6).数组变量保存的是地址,但数组变量中保存的地址是不能改变的,注意说的是指针地址不能变,但是指针指向的值是可以变的,
+因此数组变量应称为指针常量.可以改变数组中地址中存储的值
+举例
+int carr[] = {1,2,3,4,5};
+*(carr+1) = 123;
+或者这样(因为*(carr+i) 等于 carr[i])
+carr[2] = 1234;
+
+上面的内容是我修改了carr数组中第二个位置的值,指针没有发生变化的,发生变化的是指针指向区域存储的内容
+
+</code></pre>
+<p><code>3.指向指针变量的指针</code></p>
+<pre><code>
+指针变量也是变量,指针变量也需要保存到内存中,
+那么指针变量也有自己的存储地址,如果再次定义变量来保存
+指针变量的存储地址,这个地址就是指向指针变量的地址.
+举例
+void main(){
+
+    int a = 20;
+    int * p = &a;
+    int **pt = &p;
+    NSLog(@"%p",p);//输出的是指针变量p保存的地址
+    NSLog(@"%p",pt);//输出的是指针变量pt保存的地址,即p的存储地址,不是p存储内容的地址
+    NSLog(@"%p",*pt);//输出指针变量pt所指的变量中保存的地址,即&a的地址,
+    NSLog(@"%d",**pt);//输出指针变量pt所指的变量,变量中保存的地址中的值,即a的值
+
+}
+
+</code></pre>
+    </div>
+</body>
+</html>

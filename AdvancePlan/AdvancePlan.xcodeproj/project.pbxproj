@@ -14,10 +14,17 @@
 		451F5D5D2404D10900DC417E /* DDCollectionViewLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 451F5D5C2404D10900DC417E /* DDCollectionViewLayoutCell.m */; };
 		451F5D612404FF8D00DC417E /* NSString+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 451F5D602404FF8D00DC417E /* NSString+Extention.m */; };
 		4520A025241A1A1100CDABCB /* DDMobileNetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520A024241A1A1100CDABCB /* DDMobileNetController.m */; };
+		452CC5622421EF2500FADDEE /* struct.html in Resources */ = {isa = PBXBuildFile; fileRef = 452CC5612421EF2400FADDEE /* struct.html */; };
+		4539E95E243724E000BD469C /* DDObjectRecognitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4539E95D243724E000BD469C /* DDObjectRecognitionViewController.m */; };
+		456139F5242897EC00A6A17C /* DDCopyAndMutableCopyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456139F4242897EC00A6A17C /* DDCopyAndMutableCopyController.m */; };
+		456139F82428980B00A6A17C /* DDCopyAndMutableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 456139F72428980B00A6A17C /* DDCopyAndMutableTest.m */; };
+		456139FB2428987B00A6A17C /* DDCopyAndMutableCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 456139FA2428987B00A6A17C /* DDCopyAndMutableCopyTest.m */; };
 		45789AB323FFA89A0016111B /* DDHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45789AB223FFA89A0016111B /* DDHomeController.m */; };
 		45789AB623FFB2780016111B /* DDCollectionViewFlowLayoutOverRide.m in Sources */ = {isa = PBXBuildFile; fileRef = 45789AB523FFB2780016111B /* DDCollectionViewFlowLayoutOverRide.m */; };
 		45789AB923FFBE760016111B /* DDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45789AB823FFBE760016111B /* DDCollectionViewCell.m */; };
 		45789ABC23FFC9170016111B /* DDCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45789ABB23FFC9170016111B /* DDCollectionReusableView.m */; };
+		457A6F92242070490085E747 /* DDBlockStudy.c in Sources */ = {isa = PBXBuildFile; fileRef = 457A6F91242070490085E747 /* DDBlockStudy.c */; };
+		457A6F962420A2AD0085E747 /* DDStructViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457A6F952420A2AD0085E747 /* DDStructViewController.m */; };
 		4587BBC423FF783F00685367 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BBC323FF783F00685367 /* AppDelegate.m */; };
 		4587BBCD23FF783F00685367 /* AdvancePlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4587BBCB23FF783F00685367 /* AdvancePlan.xcdatamodeld */; };
 		4587BBCF23FF784100685367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4587BBCE23FF784100685367 /* Assets.xcassets */; };
@@ -27,12 +34,25 @@
 		4587BBEA23FF784100685367 /* AdvancePlanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BBE923FF784100685367 /* AdvancePlanUITests.m */; };
 		4587BBF923FF795A00685367 /* DDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BBF823FF795A00685367 /* DDNavigationController.m */; };
 		4587BC0423FFA80200685367 /* DDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587BC0323FFA80200685367 /* DDRootViewController.m */; };
+		4589F7A5241E0E8400266515 /* DDWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589F7A4241E0E8400266515 /* DDWebView.m */; };
+		4589F7A9241E105D00266515 /* HeapandStack.html in Resources */ = {isa = PBXBuildFile; fileRef = 4589F7A7241E105D00266515 /* HeapandStack.html */; };
+		4589F7AA241E105D00266515 /* base.css in Resources */ = {isa = PBXBuildFile; fileRef = 4589F7A8241E105D00266515 /* base.css */; };
+		4589F7AC241E3A9E00266515 /* cfeature.html in Resources */ = {isa = PBXBuildFile; fileRef = 4589F7AB241E3A9E00266515 /* cfeature.html */; };
+		4589F7B0241E3AC500266515 /* DDCfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589F7AF241E3AC500266515 /* DDCfeatureViewController.m */; };
 		459FE470241884B8004317BB /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 459FE46F241884B8004317BB /* MobileNetV2.mlmodel */; };
+		45A0F79D2423166900B5AC0C /* DDKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0F79C2423166900B5AC0C /* DDKVOViewController.m */; };
+		45A0F7A12423173500B5AC0C /* DDKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0F7A02423173500B5AC0C /* DDKVCViewController.m */; };
+		45A0F7A42423683F00B5AC0C /* DDBlockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0F7A32423683F00B5AC0C /* DDBlockController.m */; };
 		45ACC183240CB139007655D9 /* DDCIFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */; };
 		45B9F6F5241622D00085E6EC /* DDVisionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B9F6F4241622D00085E6EC /* DDVisionController.m */; };
+		45C11F9E2426475C00176069 /* DDSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C11F9D2426475C00176069 /* DDSingleton.m */; };
+		45C7874C241F5FC20096899D /* block.html in Resources */ = {isa = PBXBuildFile; fileRef = 45C7874B241F5FC20096899D /* block.html */; };
+		45C7874E241F61490096899D /* heapandstack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45C7874D241F61490096899D /* heapandstack.jpg */; };
 		45CAB0FF24068DEB00B639A6 /* DDCollectionCycleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CAB0FE24068DEB00B639A6 /* DDCollectionCycleController.m */; };
 		45CAB10524069FBB00B639A6 /* DDCollectionCycleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CAB10424069FBB00B639A6 /* DDCollectionCycleLayout.m */; };
 		45CAB1082406A09F00B639A6 /* DDCollectionViewCycleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CAB1072406A09F00B639A6 /* DDCollectionViewCycleCell.m */; };
+		45DCA72B241B2D56000D63FF /* DDBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DCA72A241B2D56000D63FF /* DDBlockViewController.m */; };
+		45DCA72F241B3A08000D63FF /* DDHeapAndStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DCA72E241B3A08000D63FF /* DDHeapAndStackController.m */; };
 		45EEE2FE240FB48700C11ED8 /* DDFaceFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EEE2FD240FB48700C11ED8 /* DDFaceFeature.m */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +87,15 @@
 		451F5D602404FF8D00DC417E /* NSString+Extention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extention.m"; sourceTree = "<group>"; };
 		4520A023241A1A1100CDABCB /* DDMobileNetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDMobileNetController.h; sourceTree = "<group>"; };
 		4520A024241A1A1100CDABCB /* DDMobileNetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDMobileNetController.m; sourceTree = "<group>"; };
+		452CC5612421EF2400FADDEE /* struct.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = struct.html; sourceTree = "<group>"; };
+		4539E95C243724E000BD469C /* DDObjectRecognitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDObjectRecognitionViewController.h; sourceTree = "<group>"; };
+		4539E95D243724E000BD469C /* DDObjectRecognitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDObjectRecognitionViewController.m; sourceTree = "<group>"; };
+		456139F3242897EC00A6A17C /* DDCopyAndMutableCopyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCopyAndMutableCopyController.h; sourceTree = "<group>"; };
+		456139F4242897EC00A6A17C /* DDCopyAndMutableCopyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCopyAndMutableCopyController.m; sourceTree = "<group>"; };
+		456139F62428980B00A6A17C /* DDCopyAndMutableTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCopyAndMutableTest.h; sourceTree = "<group>"; };
+		456139F72428980B00A6A17C /* DDCopyAndMutableTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCopyAndMutableTest.m; sourceTree = "<group>"; };
+		456139F92428987B00A6A17C /* DDCopyAndMutableCopyTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCopyAndMutableCopyTest.h; sourceTree = "<group>"; };
+		456139FA2428987B00A6A17C /* DDCopyAndMutableCopyTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCopyAndMutableCopyTest.m; sourceTree = "<group>"; };
 		45789AB123FFA89A0016111B /* DDHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDHomeController.h; sourceTree = "<group>"; };
 		45789AB223FFA89A0016111B /* DDHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDHomeController.m; sourceTree = "<group>"; };
 		45789AB423FFB2780016111B /* DDCollectionViewFlowLayoutOverRide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionViewFlowLayoutOverRide.h; sourceTree = "<group>"; };
@@ -75,6 +104,10 @@
 		45789AB823FFBE760016111B /* DDCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionViewCell.m; sourceTree = "<group>"; };
 		45789ABA23FFC9170016111B /* DDCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionReusableView.h; sourceTree = "<group>"; };
 		45789ABB23FFC9170016111B /* DDCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionReusableView.m; sourceTree = "<group>"; };
+		457A6F90242070490085E747 /* DDBlockStudy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDBlockStudy.h; sourceTree = "<group>"; };
+		457A6F91242070490085E747 /* DDBlockStudy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = DDBlockStudy.c; sourceTree = "<group>"; };
+		457A6F942420A2AD0085E747 /* DDStructViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDStructViewController.h; sourceTree = "<group>"; };
+		457A6F952420A2AD0085E747 /* DDStructViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDStructViewController.m; sourceTree = "<group>"; };
 		4587BBBF23FF783F00685367 /* AdvancePlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancePlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4587BBC223FF783F00685367 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4587BBC323FF783F00685367 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,17 +126,38 @@
 		4587BBF823FF795A00685367 /* DDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDNavigationController.m; sourceTree = "<group>"; };
 		4587BC0223FFA80200685367 /* DDRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDRootViewController.h; sourceTree = "<group>"; };
 		4587BC0323FFA80200685367 /* DDRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDRootViewController.m; sourceTree = "<group>"; };
+		4589F7A3241E0E8400266515 /* DDWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDWebView.h; sourceTree = "<group>"; };
+		4589F7A4241E0E8400266515 /* DDWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDWebView.m; sourceTree = "<group>"; };
+		4589F7A7241E105D00266515 /* HeapandStack.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HeapandStack.html; sourceTree = "<group>"; };
+		4589F7A8241E105D00266515 /* base.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = base.css; sourceTree = "<group>"; };
+		4589F7AB241E3A9E00266515 /* cfeature.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cfeature.html; sourceTree = "<group>"; };
+		4589F7AE241E3AC500266515 /* DDCfeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCfeatureViewController.h; sourceTree = "<group>"; };
+		4589F7AF241E3AC500266515 /* DDCfeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCfeatureViewController.m; sourceTree = "<group>"; };
 		459FE46F241884B8004317BB /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		45A0F79B2423166900B5AC0C /* DDKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDKVOViewController.h; sourceTree = "<group>"; };
+		45A0F79C2423166900B5AC0C /* DDKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDKVOViewController.m; sourceTree = "<group>"; };
+		45A0F79F2423173500B5AC0C /* DDKVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDKVCViewController.h; sourceTree = "<group>"; };
+		45A0F7A02423173500B5AC0C /* DDKVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDKVCViewController.m; sourceTree = "<group>"; };
+		45A0F7A22423683F00B5AC0C /* DDBlockController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDBlockController.h; sourceTree = "<group>"; };
+		45A0F7A32423683F00B5AC0C /* DDBlockController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDBlockController.m; sourceTree = "<group>"; };
 		45ACC181240CB139007655D9 /* DDCIFeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCIFeatureViewController.h; sourceTree = "<group>"; };
 		45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCIFeatureViewController.m; sourceTree = "<group>"; };
 		45B9F6F3241622D00085E6EC /* DDVisionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDVisionController.h; sourceTree = "<group>"; };
 		45B9F6F4241622D00085E6EC /* DDVisionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDVisionController.m; sourceTree = "<group>"; };
+		45C11F9C2426475C00176069 /* DDSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDSingleton.h; sourceTree = "<group>"; };
+		45C11F9D2426475C00176069 /* DDSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDSingleton.m; sourceTree = "<group>"; };
+		45C7874B241F5FC20096899D /* block.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = block.html; sourceTree = "<group>"; };
+		45C7874D241F61490096899D /* heapandstack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = heapandstack.jpg; sourceTree = "<group>"; };
 		45CAB0FD24068DEB00B639A6 /* DDCollectionCycleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionCycleController.h; sourceTree = "<group>"; };
 		45CAB0FE24068DEB00B639A6 /* DDCollectionCycleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionCycleController.m; sourceTree = "<group>"; };
 		45CAB10324069FBB00B639A6 /* DDCollectionCycleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionCycleLayout.h; sourceTree = "<group>"; };
 		45CAB10424069FBB00B639A6 /* DDCollectionCycleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionCycleLayout.m; sourceTree = "<group>"; };
 		45CAB1062406A09F00B639A6 /* DDCollectionViewCycleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionViewCycleCell.h; sourceTree = "<group>"; };
 		45CAB1072406A09F00B639A6 /* DDCollectionViewCycleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionViewCycleCell.m; sourceTree = "<group>"; };
+		45DCA729241B2D56000D63FF /* DDBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDBlockViewController.h; sourceTree = "<group>"; };
+		45DCA72A241B2D56000D63FF /* DDBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDBlockViewController.m; sourceTree = "<group>"; };
+		45DCA72D241B3A08000D63FF /* DDHeapAndStackController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDHeapAndStackController.h; sourceTree = "<group>"; };
+		45DCA72E241B3A08000D63FF /* DDHeapAndStackController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDHeapAndStackController.m; sourceTree = "<group>"; };
 		45EEE2FC240FB48700C11ED8 /* DDFaceFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDFaceFeature.h; sourceTree = "<group>"; };
 		45EEE2FD240FB48700C11ED8 /* DDFaceFeature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDFaceFeature.m; sourceTree = "<group>"; };
 		72E9ED04FD21E823A70E2709 /* Pods-AdvancePlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvancePlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvancePlan/Pods-AdvancePlan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +225,8 @@
 			children = (
 				451F5D5F2404FF8D00DC417E /* NSString+Extention.h */,
 				451F5D602404FF8D00DC417E /* NSString+Extention.m */,
+				4589F7A3241E0E8400266515 /* DDWebView.h */,
+				4589F7A4241E0E8400266515 /* DDWebView.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -183,6 +239,37 @@
 				459FE46F241884B8004317BB /* MobileNetV2.mlmodel */,
 			);
 			path = MobileNet;
+			sourceTree = "<group>";
+		};
+		4539E95B2437249700BD469C /* ObjectRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				4539E95C243724E000BD469C /* DDObjectRecognitionViewController.h */,
+				4539E95D243724E000BD469C /* DDObjectRecognitionViewController.m */,
+			);
+			path = ObjectRecognition;
+			sourceTree = "<group>";
+		};
+		456139F2242897C200A6A17C /* CopyAndMutableCopy */ = {
+			isa = PBXGroup;
+			children = (
+				456139F3242897EC00A6A17C /* DDCopyAndMutableCopyController.h */,
+				456139F4242897EC00A6A17C /* DDCopyAndMutableCopyController.m */,
+				456139F62428980B00A6A17C /* DDCopyAndMutableTest.h */,
+				456139F72428980B00A6A17C /* DDCopyAndMutableTest.m */,
+				456139F92428987B00A6A17C /* DDCopyAndMutableCopyTest.h */,
+				456139FA2428987B00A6A17C /* DDCopyAndMutableCopyTest.m */,
+			);
+			path = CopyAndMutableCopy;
+			sourceTree = "<group>";
+		};
+		457A6F932420A2920085E747 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				457A6F942420A2AD0085E747 /* DDStructViewController.h */,
+				457A6F952420A2AD0085E747 /* DDStructViewController.m */,
+			);
+			path = Struct;
 			sourceTree = "<group>";
 		};
 		4587BBB623FF783F00685367 = {
@@ -210,6 +297,7 @@
 		4587BBC123FF783F00685367 /* AdvancePlan */ = {
 			isa = PBXGroup;
 			children = (
+				4589F7A6241E105D00266515 /* Basic */,
 				451F5D5E2404FECF00DC417E /* util */,
 				4587BBFE23FFA77500685367 /* Main */,
 				4587BBCE23FF784100685367 /* Assets.xcassets */,
@@ -255,6 +343,14 @@
 		4587BBFE23FFA77500685367 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4539E95B2437249700BD469C /* ObjectRecognition */,
+				456139F2242897C200A6A17C /* CopyAndMutableCopy */,
+				45A0F79E2423172B00B5AC0C /* KVC */,
+				45A0F79A2423165700B5AC0C /* KVO */,
+				457A6F932420A2920085E747 /* Struct */,
+				4589F7AD241E3AA500266515 /* Cfeature */,
+				45DCA72C241B39DF000D63FF /* HeapAndStack */,
+				45DCA728241B2D40000D63FF /* Block */,
 				4520A022241A19F700CDABCB /* MobileNet */,
 				45B9F6F2241622B80085E6EC /* Vision */,
 				45ACC180240CB11C007655D9 /* CIFeature */,
@@ -279,6 +375,48 @@
 				45789ABB23FFC9170016111B /* DDCollectionReusableView.m */,
 			);
 			path = Desk;
+			sourceTree = "<group>";
+		};
+		4589F7A6241E105D00266515 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				452CC5612421EF2400FADDEE /* struct.html */,
+				45C7874D241F61490096899D /* heapandstack.jpg */,
+				45C7874B241F5FC20096899D /* block.html */,
+				4589F7A7241E105D00266515 /* HeapandStack.html */,
+				4589F7AB241E3A9E00266515 /* cfeature.html */,
+				4589F7A8241E105D00266515 /* base.css */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		4589F7AD241E3AA500266515 /* Cfeature */ = {
+			isa = PBXGroup;
+			children = (
+				4589F7AE241E3AC500266515 /* DDCfeatureViewController.h */,
+				4589F7AF241E3AC500266515 /* DDCfeatureViewController.m */,
+			);
+			path = Cfeature;
+			sourceTree = "<group>";
+		};
+		45A0F79A2423165700B5AC0C /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				45A0F79B2423166900B5AC0C /* DDKVOViewController.h */,
+				45A0F79C2423166900B5AC0C /* DDKVOViewController.m */,
+				45C11F9C2426475C00176069 /* DDSingleton.h */,
+				45C11F9D2426475C00176069 /* DDSingleton.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
+		45A0F79E2423172B00B5AC0C /* KVC */ = {
+			isa = PBXGroup;
+			children = (
+				45A0F79F2423173500B5AC0C /* DDKVCViewController.h */,
+				45A0F7A02423173500B5AC0C /* DDKVCViewController.m */,
+			);
+			path = KVC;
 			sourceTree = "<group>";
 		};
 		45ACC180240CB11C007655D9 /* CIFeature */ = {
@@ -314,6 +452,28 @@
 				45CAB1072406A09F00B639A6 /* DDCollectionViewCycleCell.m */,
 			);
 			path = CollectionCycleView;
+			sourceTree = "<group>";
+		};
+		45DCA728241B2D40000D63FF /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				45DCA729241B2D56000D63FF /* DDBlockViewController.h */,
+				45DCA72A241B2D56000D63FF /* DDBlockViewController.m */,
+				457A6F90242070490085E747 /* DDBlockStudy.h */,
+				457A6F91242070490085E747 /* DDBlockStudy.c */,
+				45A0F7A22423683F00B5AC0C /* DDBlockController.h */,
+				45A0F7A32423683F00B5AC0C /* DDBlockController.m */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
+		45DCA72C241B39DF000D63FF /* HeapAndStack */ = {
+			isa = PBXGroup;
+			children = (
+				45DCA72D241B3A08000D63FF /* DDHeapAndStackController.h */,
+				45DCA72E241B3A08000D63FF /* DDHeapAndStackController.m */,
+			);
+			path = HeapAndStack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +540,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "www.dong.com 董德帅";
+				ORGANIZATIONNAME = "www.dong.com 九天";
 				TargetAttributes = {
 					4587BBBE23FF783F00685367 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -420,7 +580,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4589F7AC241E3A9E00266515 /* cfeature.html in Resources */,
+				4589F7A9241E105D00266515 /* HeapandStack.html in Resources */,
+				45C7874E241F61490096899D /* heapandstack.jpg in Resources */,
+				452CC5622421EF2500FADDEE /* struct.html in Resources */,
+				45C7874C241F5FC20096899D /* block.html in Resources */,
 				4587BBD223FF784100685367 /* LaunchScreen.storyboard in Resources */,
+				4589F7AA241E105D00266515 /* base.css in Resources */,
 				4587BBCF23FF784100685367 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,8 +636,14 @@
 				459FE470241884B8004317BB /* MobileNetV2.mlmodel in Sources */,
 				45CAB0FF24068DEB00B639A6 /* DDCollectionCycleController.m in Sources */,
 				45789AB923FFBE760016111B /* DDCollectionViewCell.m in Sources */,
+				45C11F9E2426475C00176069 /* DDSingleton.m in Sources */,
 				45789AB323FFA89A0016111B /* DDHomeController.m in Sources */,
+				4539E95E243724E000BD469C /* DDObjectRecognitionViewController.m in Sources */,
 				451F5D572404CDE700DC417E /* DDCollectionLayoutController.m in Sources */,
+				456139FB2428987B00A6A17C /* DDCopyAndMutableCopyTest.m in Sources */,
+				457A6F92242070490085E747 /* DDBlockStudy.c in Sources */,
+				45DCA72B241B2D56000D63FF /* DDBlockViewController.m in Sources */,
+				45A0F79D2423166900B5AC0C /* DDKVOViewController.m in Sources */,
 				4587BC0423FFA80200685367 /* DDRootViewController.m in Sources */,
 				45CAB1082406A09F00B639A6 /* DDCollectionViewCycleCell.m in Sources */,
 				451F5D612404FF8D00DC417E /* NSString+Extention.m in Sources */,
@@ -479,15 +651,23 @@
 				45CAB10524069FBB00B639A6 /* DDCollectionCycleLayout.m in Sources */,
 				45EEE2FE240FB48700C11ED8 /* DDFaceFeature.m in Sources */,
 				4513F3D02408BE3F0011473C /* DDCollectionCycleBackView.m in Sources */,
+				45A0F7A12423173500B5AC0C /* DDKVCViewController.m in Sources */,
+				456139F82428980B00A6A17C /* DDCopyAndMutableTest.m in Sources */,
 				451F5D5D2404D10900DC417E /* DDCollectionViewLayoutCell.m in Sources */,
+				457A6F962420A2AD0085E747 /* DDStructViewController.m in Sources */,
 				4587BBCD23FF783F00685367 /* AdvancePlan.xcdatamodeld in Sources */,
+				456139F5242897EC00A6A17C /* DDCopyAndMutableCopyController.m in Sources */,
 				45789AB623FFB2780016111B /* DDCollectionViewFlowLayoutOverRide.m in Sources */,
 				45789ABC23FFC9170016111B /* DDCollectionReusableView.m in Sources */,
+				4589F7B0241E3AC500266515 /* DDCfeatureViewController.m in Sources */,
+				45A0F7A42423683F00B5AC0C /* DDBlockController.m in Sources */,
+				4589F7A5241E0E8400266515 /* DDWebView.m in Sources */,
 				451F5D5A2404D0AA00DC417E /* DDCollectionViewLayout.m in Sources */,
 				4520A025241A1A1100CDABCB /* DDMobileNetController.m in Sources */,
 				4587BBF923FF795A00685367 /* DDNavigationController.m in Sources */,
 				45ACC183240CB139007655D9 /* DDCIFeatureViewController.m in Sources */,
 				4587BBD523FF784100685367 /* main.m in Sources */,
+				45DCA72F241B3A08000D63FF /* DDHeapAndStackController.m in Sources */,
 				4587BBC423FF783F00685367 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +832,7 @@
 			baseConfigurationReference = 72E9ED04FD21E823A70E2709 /* Pods-AdvancePlan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UWL872P7WZ;
@@ -672,6 +853,7 @@
 			baseConfigurationReference = FC96F76DBD2FA9472E7F44D4 /* Pods-AdvancePlan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = UWL872P7WZ;
 				INFOPLIST_FILE = AdvancePlan/Info.plist;

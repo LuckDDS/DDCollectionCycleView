@@ -9,7 +9,6 @@
 #import "DDVisionController.h"
 #import <Vision/Vision.h>
 #import <AVKit/AVKit.h>
-#import "MobileNetV2.h"
 
 @interface DDVisionController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -154,6 +153,7 @@
         CVImageBufferRef buffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         //创建完成回调
         VNRequestCompletionHandler completionHandler = ^(VNRequest *request,NSError *error){
+            self->isEnd = YES;
             if (error) {
                 NSLog(@"失败");
             }else{
@@ -199,11 +199,11 @@
         //开始识别,返回识别是否成功
         NSError *err;
         BOOL success = [imageRequestHandler performRequests:@[landmarkRequest] error:&err];
-        isEnd = YES;
-    
+        
     }
 
 }
+
 - (void)buildFeatureOnPlayerWithBoundingbox:(CGRect)boundingBox{
     
     NSInteger pointNum = _allPoints.count;

@@ -7,7 +7,6 @@
 //
 
 #import "DDRootViewController.h"
-
 @interface DDRootViewController ()<UIGestureRecognizerDelegate>
 
 @end

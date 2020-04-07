@@ -1,20 +1,20 @@
 //
-//  MobileNetController.m
+//  DDObjectRecognitionViewController.m
 //  AdvancePlan
 //
-//  Created by 董德帅 on 2020/3/12.
-//  Copyright © 2020 www.dong.com 董德帅. All rights reserved.
+//  Created by 董德帅 on 2020/4/3.
+//  Copyright © 2020 www.dong.com 九天. All rights reserved.
 //
 
-#import "DDMobileNetController.h"
+#import "DDObjectRecognitionViewController.h"
 #import <AVKit/AVKit.h>
-#import "MobileNetV2.h"
+#import <CoreGraphics/CoreGraphics.h>
 
-@interface DDMobileNetController ()
+@interface DDObjectRecognitionViewController ()
 
 @end
 
-@implementation DDMobileNetController
+@implementation DDObjectRecognitionViewController
 {
     AVCaptureSession *captureSession;
     
@@ -29,15 +29,12 @@
     
     CIImage *image;
     CIContext *context;
-    MobileNetV2 *model;
-    MobileNetV2Output *outPut;
-
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     context = [CIContext context];
     self.navigationController.navigationBar.hidden = YES;
-    model = [[MobileNetV2 alloc]init];
     
     [self buildCamera];
     [self buildBtn];
@@ -79,7 +76,7 @@
 - (void)buildCamera{
 
     //初始话设备
-    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionFront];
     
     AVCapturePhotoSettings *phoneSetting = [AVCapturePhotoSettings photoSettings];
     phoneSetting.flashMode = AVCaptureFlashModeAuto;
@@ -136,15 +133,7 @@
     captureLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     //添加显示
     [self.view.layer addSublayer:captureLayer];
-    UILabel *topView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, (playerHeight-224)/2)];
-    topView.text = @"下方是被识别的区域";
-    topView.backgroundColor = [UIColor redColor];
-    [captureLayer addSublayer:topView.layer];
-    
-    UILabel *bottomView = [[UILabel alloc]initWithFrame:CGRectMake(0, playerHeight-(playerHeight-224)/2, self.view.frame.size.width, (playerHeight - 224)/2)];
-    bottomView.text = @"上方是被识别的区域";
-    bottomView.backgroundColor = [UIColor redColor];
-    [captureLayer addSublayer:bottomView.layer];
+
     
     testLab = [[UILabel alloc]initWithFrame:CGRectMake(0, playerHeight-(playerHeight-224)/2+(playerHeight - 224)/2, self.view.frame.size.width, 150)];
     testLab.numberOfLines = 0;
@@ -162,20 +151,20 @@
     //创建图层
     [context clearCaches];
     //获取CGImageRef数据
-    CGImageRef cgImgRef = [context createCGImage:image fromRect:CGRectMake((480 - 224)/2, (640 - 224)/2, 224, 224)];
+    CGImageRef cgImgRef = [context createCGImage:image fromRect:CGRectMake(0, 0/2, 480, 640)];
     
     CVImageBufferRef bufferRef = [self pixelBufferFromCGImage:cgImgRef];
     CGImageRelease(cgImgRef);
-    NSError *error;
-    outPut = [model predictionFromImage:bufferRef error:&error];
+//    NSError *error;
+//    outPut = [model predictionFromImage:bufferRef error:&error];
     CVPixelBufferRelease(bufferRef);
-    if (error) {
-        NSLog(@"报错了");
-    }else{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self->testLab.text = self->outPut.classLabel;
-        });
-    }
+//    if (error) {
+//        NSLog(@"报错了");
+//    }else{
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self->testLab.text = self->outPut.classLabel;
+//        });
+//    }
 
 }
 
@@ -204,7 +193,7 @@
     void *pxdata = CVPixelBufferGetBaseAddress(pxbuffer);
     NSParameterAssert(pxdata != NULL);
     
-    CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+    CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceGray();
     
     CGContextRef context = CGBitmapContextCreate(pxdata,
                                                  frameWidth,

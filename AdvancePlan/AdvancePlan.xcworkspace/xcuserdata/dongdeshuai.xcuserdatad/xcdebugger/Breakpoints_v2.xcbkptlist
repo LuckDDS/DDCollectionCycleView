@@ -5,17 +5,44 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "70B6A157-3E94-4D99-B2FA-A2F763035537"
+            uuid = "CDD08846-E71D-4E8F-95D6-A3C2743936B0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdvancePlan/Main/Vision/DDVisionController.m"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8094298-54DB-4DC3-A58C-592AE135F365"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdvancePlan/Main/CopyAndMutableCopy/DDCopyAndMutableCopyController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9ADD7CE-DFAA-4AB7-8474-E59BB1A5EAAE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdvancePlan/Main/ObjectRecognition/DDObjectRecognitionViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-captureOutput:didOutputSampleBuffer:fromConnection:"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,16 +50,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "26F8D4EA-CE48-427A-93CF-61495AFC2812"
-            shouldBeEnabled = "No"
+            uuid = "C1054E13-B50D-497D-96F8-F8918E0455AF"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdvancePlan/Main/Vision/DDVisionController.m"
+            filePath = "AdvancePlan/Main/ObjectRecognition/DDObjectRecognitionViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "-buildFeatureOnPlayerWithBoundingbox:"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "-pixelBufferFromCGImage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

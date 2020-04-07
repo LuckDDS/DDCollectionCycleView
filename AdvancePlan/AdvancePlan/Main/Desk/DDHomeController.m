@@ -15,6 +15,14 @@
 #import "DDCIFeatureViewController.h"
 #import "DDVisionController.h"
 #import "DDMobileNetController.h"
+#import "DDBlockViewController.h"
+#import "DDHeapAndStackController.h"
+#import "DDCfeatureViewController.h"
+#import "DDStructViewController.h"
+#import "DDKVOViewController.h"
+#import "DDKVCViewController.h"
+#import "DDCopyAndMutableCopyController.h"
+#import "DDObjectRecognitionViewController.h"
 @interface DDHomeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *homeCollectionView;
@@ -29,6 +37,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
     self.navigationItem.title = @"首页";
     
     [self requestData];
@@ -37,7 +46,7 @@
 }
 
 - (void)requestData{
-    NSArray *headers = @[@"UICollectionViewLayout",@"CIFeature",@"Vision"];
+    NSArray *headers = @[@"UICollectionViewLayout",@"CIFeature",@"Vision",@"Basics",@"ObjectRecognition"];
     
     for (int i = 0; i < headers.count; i ++) {
         NSMutableDictionary * unitDict = [NSMutableDictionary new];
@@ -48,6 +57,10 @@
             [unitDict setValue:@[@"CIFeatureTypeFace(人脸识别)"] forKey:@"content"];
         }else if (i == 2){
             [unitDict setValue:@[@"Vision",@"MobileNet"] forKey:@"content"];
+        }else if (i == 3){
+            [unitDict setValue:@[@"堆栈",@"C语言特性",@"Struct(结构体)",@"Block",@"KVC",@"KVO",@"copy和mutableCopy",@"GCD",@"NSThread",@"NSOperation",@"锁",@"socket",@"链表",@"MVC",@"MVVM",@"MVP"] forKey:@"content"];
+        }else if (i == 4){
+            [unitDict setValue:@[@"ObjectRecognition"] forKey:@"content"];
         }
         [self.allDataArr addObject:unitDict];
     }
@@ -104,6 +117,33 @@
             DDMobileNetController *mobileController = [[DDMobileNetController alloc]init];
             [self.navigationController pushViewController:mobileController animated:YES];
         }
+    }else if (indexPath.section == 3){
+        if (indexPath.row == 0) {
+            DDHeapAndStackController *heapAndStackController = [[DDHeapAndStackController alloc]init];
+            [self.navigationController pushViewController:heapAndStackController animated:YES];
+        }else if(indexPath.row == 1){
+            DDCfeatureViewController *cfeatureController = [[DDCfeatureViewController alloc]init];
+            [self.navigationController pushViewController:cfeatureController animated:YES];
+        }else if (indexPath.row == 2){
+            DDStructViewController *structController = [[DDStructViewController alloc]init];
+            [self.navigationController pushViewController:structController animated:YES];
+        }else if(indexPath.row == 3){
+            DDBlockViewController *blockController = [[DDBlockViewController alloc]init];
+            [self.navigationController pushViewController:blockController animated:YES];
+        }else if (indexPath.row == 4){
+            DDKVCViewController *kvcController = [[DDKVCViewController alloc]init];
+            [self.navigationController pushViewController:kvcController animated:YES];
+        }else if(indexPath.row == 5){
+            DDKVOViewController *kvoController = [[DDKVOViewController alloc]init];
+            
+            [self.navigationController pushViewController:kvoController animated:YES];
+        }else if (indexPath.row == 6){
+            DDCopyAndMutableCopyController *copyController = [[DDCopyAndMutableCopyController alloc]init];
+            [self.navigationController pushViewController:copyController animated:YES];
+        }
+    }else if (indexPath.section == 4){
+        DDObjectRecognitionViewController* ObjectRecognitionController = [[DDObjectRecognitionViewController alloc]init];
+        [self.navigationController pushViewController:ObjectRecognitionController animated:YES];
     }
 }
 
