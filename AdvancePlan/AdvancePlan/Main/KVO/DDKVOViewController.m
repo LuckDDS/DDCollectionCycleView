@@ -8,6 +8,7 @@
 
 #import "DDKVOViewController.h"
 #import "DDSingleton.h"
+#import <Foundation/NSAutoreleasePool.h>
 @interface DDKVOViewController ()
 
 @end
@@ -22,7 +23,9 @@
 //    [self.view addSubview:webView];
     DDSingleton *singleton = [DDSingleton instance];
     NSLog(@"%p,%p",singleton,&singleton);
-    
+    @autoreleasepool {
+        
+    }
     // Do any additional setup after loading the view.
 }
 

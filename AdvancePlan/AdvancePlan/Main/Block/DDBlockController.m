@@ -76,6 +76,10 @@ static NSString *str2 = @"bbbbbb";
     NSLog(@"%@",dd.s);
 }
 
+- (void)allocMydata{
+
+}
+
 - (void)dealloc{
     NSLog(@"aaaaaaaaaaaaaa");
 }

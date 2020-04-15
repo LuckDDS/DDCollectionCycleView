@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17E1B78F06DE50EDE6C69ADB /* libPods-AdvancePlan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDEB3813CC9ED6E6000A8E0 /* libPods-AdvancePlan.a */; };
 		4513F3D02408BE3F0011473C /* DDCollectionCycleBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4513F3CF2408BE3F0011473C /* DDCollectionCycleBackView.m */; };
+		4515BD9D244597C700A80DC2 /* DDUIBezierPathTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4515BD9C244597C700A80DC2 /* DDUIBezierPathTestView.m */; };
 		451F5D572404CDE700DC417E /* DDCollectionLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 451F5D562404CDE700DC417E /* DDCollectionLayoutController.m */; };
 		451F5D5A2404D0AA00DC417E /* DDCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 451F5D592404D0AA00DC417E /* DDCollectionViewLayout.m */; };
 		451F5D5D2404D10900DC417E /* DDCollectionViewLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 451F5D5C2404D10900DC417E /* DDCollectionViewLayoutCell.m */; };
@@ -19,6 +20,8 @@
 		456139F5242897EC00A6A17C /* DDCopyAndMutableCopyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456139F4242897EC00A6A17C /* DDCopyAndMutableCopyController.m */; };
 		456139F82428980B00A6A17C /* DDCopyAndMutableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 456139F72428980B00A6A17C /* DDCopyAndMutableTest.m */; };
 		456139FB2428987B00A6A17C /* DDCopyAndMutableCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 456139FA2428987B00A6A17C /* DDCopyAndMutableCopyTest.m */; };
+		4570F865243C59E90067A80F /* DDKVCTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4570F864243C59E90067A80F /* DDKVCTestObject.m */; };
+		4570F868243C64300067A80F /* DDKVCSubObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4570F867243C64300067A80F /* DDKVCSubObject.m */; };
 		45789AB323FFA89A0016111B /* DDHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45789AB223FFA89A0016111B /* DDHomeController.m */; };
 		45789AB623FFB2780016111B /* DDCollectionViewFlowLayoutOverRide.m in Sources */ = {isa = PBXBuildFile; fileRef = 45789AB523FFB2780016111B /* DDCollectionViewFlowLayoutOverRide.m */; };
 		45789AB923FFBE760016111B /* DDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45789AB823FFBE760016111B /* DDCollectionViewCell.m */; };
@@ -43,6 +46,12 @@
 		45A0F79D2423166900B5AC0C /* DDKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0F79C2423166900B5AC0C /* DDKVOViewController.m */; };
 		45A0F7A12423173500B5AC0C /* DDKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0F7A02423173500B5AC0C /* DDKVCViewController.m */; };
 		45A0F7A42423683F00B5AC0C /* DDBlockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0F7A32423683F00B5AC0C /* DDBlockController.m */; };
+		45A4B332243EF73500E56234 /* kvo.html in Resources */ = {isa = PBXBuildFile; fileRef = 45A4B32F243EF73500E56234 /* kvo.html */; };
+		45A4B333243EF73500E56234 /* copyAndMutableCopy.html in Resources */ = {isa = PBXBuildFile; fileRef = 45A4B330243EF73500E56234 /* copyAndMutableCopy.html */; };
+		45A4B334243EF73500E56234 /* kvc.html in Resources */ = {isa = PBXBuildFile; fileRef = 45A4B331243EF73500E56234 /* kvc.html */; };
+		45A4B338243F03D200E56234 /* DDCoreGraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B337243F03D200E56234 /* DDCoreGraphicsViewController.m */; };
+		45A4B33B243F03EE00E56234 /* DDUIBezierPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B33A243F03EE00E56234 /* DDUIBezierPathViewController.m */; };
+		45A4B33E243F0B7200E56234 /* DDCoreGraphicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B33D243F0B7200E56234 /* DDCoreGraphicsView.m */; };
 		45ACC183240CB139007655D9 /* DDCIFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */; };
 		45B9F6F5241622D00085E6EC /* DDVisionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B9F6F4241622D00085E6EC /* DDVisionController.m */; };
 		45C11F9E2426475C00176069 /* DDSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C11F9D2426475C00176069 /* DDSingleton.m */; };
@@ -77,6 +86,8 @@
 		2DDEB3813CC9ED6E6000A8E0 /* libPods-AdvancePlan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdvancePlan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4513F3CE2408BE3F0011473C /* DDCollectionCycleBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionCycleBackView.h; sourceTree = "<group>"; };
 		4513F3CF2408BE3F0011473C /* DDCollectionCycleBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionCycleBackView.m; sourceTree = "<group>"; };
+		4515BD9B244597C700A80DC2 /* DDUIBezierPathTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDUIBezierPathTestView.h; sourceTree = "<group>"; };
+		4515BD9C244597C700A80DC2 /* DDUIBezierPathTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDUIBezierPathTestView.m; sourceTree = "<group>"; };
 		451F5D552404CDE700DC417E /* DDCollectionLayoutController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionLayoutController.h; sourceTree = "<group>"; };
 		451F5D562404CDE700DC417E /* DDCollectionLayoutController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCollectionLayoutController.m; sourceTree = "<group>"; };
 		451F5D582404D0AA00DC417E /* DDCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionViewLayout.h; sourceTree = "<group>"; };
@@ -96,6 +107,10 @@
 		456139F72428980B00A6A17C /* DDCopyAndMutableTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCopyAndMutableTest.m; sourceTree = "<group>"; };
 		456139F92428987B00A6A17C /* DDCopyAndMutableCopyTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCopyAndMutableCopyTest.h; sourceTree = "<group>"; };
 		456139FA2428987B00A6A17C /* DDCopyAndMutableCopyTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCopyAndMutableCopyTest.m; sourceTree = "<group>"; };
+		4570F863243C59E90067A80F /* DDKVCTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDKVCTestObject.h; sourceTree = "<group>"; };
+		4570F864243C59E90067A80F /* DDKVCTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDKVCTestObject.m; sourceTree = "<group>"; };
+		4570F866243C64300067A80F /* DDKVCSubObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDKVCSubObject.h; sourceTree = "<group>"; };
+		4570F867243C64300067A80F /* DDKVCSubObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDKVCSubObject.m; sourceTree = "<group>"; };
 		45789AB123FFA89A0016111B /* DDHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDHomeController.h; sourceTree = "<group>"; };
 		45789AB223FFA89A0016111B /* DDHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDHomeController.m; sourceTree = "<group>"; };
 		45789AB423FFB2780016111B /* DDCollectionViewFlowLayoutOverRide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCollectionViewFlowLayoutOverRide.h; sourceTree = "<group>"; };
@@ -140,6 +155,15 @@
 		45A0F7A02423173500B5AC0C /* DDKVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDKVCViewController.m; sourceTree = "<group>"; };
 		45A0F7A22423683F00B5AC0C /* DDBlockController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDBlockController.h; sourceTree = "<group>"; };
 		45A0F7A32423683F00B5AC0C /* DDBlockController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDBlockController.m; sourceTree = "<group>"; };
+		45A4B32F243EF73500E56234 /* kvo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = kvo.html; sourceTree = "<group>"; };
+		45A4B330243EF73500E56234 /* copyAndMutableCopy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = copyAndMutableCopy.html; sourceTree = "<group>"; };
+		45A4B331243EF73500E56234 /* kvc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = kvc.html; sourceTree = "<group>"; };
+		45A4B336243F03D200E56234 /* DDCoreGraphicsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCoreGraphicsViewController.h; sourceTree = "<group>"; };
+		45A4B337243F03D200E56234 /* DDCoreGraphicsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCoreGraphicsViewController.m; sourceTree = "<group>"; };
+		45A4B339243F03EE00E56234 /* DDUIBezierPathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDUIBezierPathViewController.h; sourceTree = "<group>"; };
+		45A4B33A243F03EE00E56234 /* DDUIBezierPathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDUIBezierPathViewController.m; sourceTree = "<group>"; };
+		45A4B33C243F0B7200E56234 /* DDCoreGraphicsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCoreGraphicsView.h; sourceTree = "<group>"; };
+		45A4B33D243F0B7200E56234 /* DDCoreGraphicsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCoreGraphicsView.m; sourceTree = "<group>"; };
 		45ACC181240CB139007655D9 /* DDCIFeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCIFeatureViewController.h; sourceTree = "<group>"; };
 		45ACC182240CB139007655D9 /* DDCIFeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCIFeatureViewController.m; sourceTree = "<group>"; };
 		45B9F6F3241622D00085E6EC /* DDVisionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDVisionController.h; sourceTree = "<group>"; };
@@ -343,6 +367,7 @@
 		4587BBFE23FFA77500685367 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				45A4B335243F03B100E56234 /* DrawView */,
 				4539E95B2437249700BD469C /* ObjectRecognition */,
 				456139F2242897C200A6A17C /* CopyAndMutableCopy */,
 				45A0F79E2423172B00B5AC0C /* KVC */,
@@ -384,6 +409,9 @@
 				45C7874D241F61490096899D /* heapandstack.jpg */,
 				45C7874B241F5FC20096899D /* block.html */,
 				4589F7A7241E105D00266515 /* HeapandStack.html */,
+				45A4B330243EF73500E56234 /* copyAndMutableCopy.html */,
+				45A4B331243EF73500E56234 /* kvc.html */,
+				45A4B32F243EF73500E56234 /* kvo.html */,
 				4589F7AB241E3A9E00266515 /* cfeature.html */,
 				4589F7A8241E105D00266515 /* base.css */,
 			);
@@ -415,8 +443,27 @@
 			children = (
 				45A0F79F2423173500B5AC0C /* DDKVCViewController.h */,
 				45A0F7A02423173500B5AC0C /* DDKVCViewController.m */,
+				4570F863243C59E90067A80F /* DDKVCTestObject.h */,
+				4570F864243C59E90067A80F /* DDKVCTestObject.m */,
+				4570F866243C64300067A80F /* DDKVCSubObject.h */,
+				4570F867243C64300067A80F /* DDKVCSubObject.m */,
 			);
 			path = KVC;
+			sourceTree = "<group>";
+		};
+		45A4B335243F03B100E56234 /* DrawView */ = {
+			isa = PBXGroup;
+			children = (
+				45A4B336243F03D200E56234 /* DDCoreGraphicsViewController.h */,
+				45A4B337243F03D200E56234 /* DDCoreGraphicsViewController.m */,
+				45A4B33C243F0B7200E56234 /* DDCoreGraphicsView.h */,
+				45A4B33D243F0B7200E56234 /* DDCoreGraphicsView.m */,
+				45A4B339243F03EE00E56234 /* DDUIBezierPathViewController.h */,
+				45A4B33A243F03EE00E56234 /* DDUIBezierPathViewController.m */,
+				4515BD9B244597C700A80DC2 /* DDUIBezierPathTestView.h */,
+				4515BD9C244597C700A80DC2 /* DDUIBezierPathTestView.m */,
+			);
+			path = DrawView;
 			sourceTree = "<group>";
 		};
 		45ACC180240CB11C007655D9 /* CIFeature */ = {
@@ -585,7 +632,10 @@
 				45C7874E241F61490096899D /* heapandstack.jpg in Resources */,
 				452CC5622421EF2500FADDEE /* struct.html in Resources */,
 				45C7874C241F5FC20096899D /* block.html in Resources */,
+				45A4B332243EF73500E56234 /* kvo.html in Resources */,
 				4587BBD223FF784100685367 /* LaunchScreen.storyboard in Resources */,
+				45A4B334243EF73500E56234 /* kvc.html in Resources */,
+				45A4B333243EF73500E56234 /* copyAndMutableCopy.html in Resources */,
 				4589F7AA241E105D00266515 /* base.css in Resources */,
 				4587BBCF23FF784100685367 /* Assets.xcassets in Resources */,
 			);
@@ -635,6 +685,8 @@
 			files = (
 				459FE470241884B8004317BB /* MobileNetV2.mlmodel in Sources */,
 				45CAB0FF24068DEB00B639A6 /* DDCollectionCycleController.m in Sources */,
+				4515BD9D244597C700A80DC2 /* DDUIBezierPathTestView.m in Sources */,
+				4570F868243C64300067A80F /* DDKVCSubObject.m in Sources */,
 				45789AB923FFBE760016111B /* DDCollectionViewCell.m in Sources */,
 				45C11F9E2426475C00176069 /* DDSingleton.m in Sources */,
 				45789AB323FFA89A0016111B /* DDHomeController.m in Sources */,
@@ -658,14 +710,18 @@
 				4587BBCD23FF783F00685367 /* AdvancePlan.xcdatamodeld in Sources */,
 				456139F5242897EC00A6A17C /* DDCopyAndMutableCopyController.m in Sources */,
 				45789AB623FFB2780016111B /* DDCollectionViewFlowLayoutOverRide.m in Sources */,
+				45A4B33E243F0B7200E56234 /* DDCoreGraphicsView.m in Sources */,
 				45789ABC23FFC9170016111B /* DDCollectionReusableView.m in Sources */,
 				4589F7B0241E3AC500266515 /* DDCfeatureViewController.m in Sources */,
 				45A0F7A42423683F00B5AC0C /* DDBlockController.m in Sources */,
+				45A4B338243F03D200E56234 /* DDCoreGraphicsViewController.m in Sources */,
 				4589F7A5241E0E8400266515 /* DDWebView.m in Sources */,
 				451F5D5A2404D0AA00DC417E /* DDCollectionViewLayout.m in Sources */,
 				4520A025241A1A1100CDABCB /* DDMobileNetController.m in Sources */,
 				4587BBF923FF795A00685367 /* DDNavigationController.m in Sources */,
+				4570F865243C59E90067A80F /* DDKVCTestObject.m in Sources */,
 				45ACC183240CB139007655D9 /* DDCIFeatureViewController.m in Sources */,
+				45A4B33B243F03EE00E56234 /* DDUIBezierPathViewController.m in Sources */,
 				4587BBD523FF784100685367 /* main.m in Sources */,
 				45DCA72F241B3A08000D63FF /* DDHeapAndStackController.m in Sources */,
 				4587BBC423FF783F00685367 /* AppDelegate.m in Sources */,

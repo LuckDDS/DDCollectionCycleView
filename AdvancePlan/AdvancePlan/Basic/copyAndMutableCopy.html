@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="back">
+        <div class="header">堆(heap)和栈(stack)的总结</div>
+        <h3>一.NSString</h3>
+        <p><code>1.执行copy操作</code></p>
+        <pre><code>
+NSString* str = @"123";
+NSString* str1 = [str copy];
+对于NSString不可变字符串,copy执行的是指针复制,指向的内存地址还是之前的,引用计数加1,
+copy返回的是不可变字符串,只能使用NSString指针类型去接收
+(因为是不可变所以不能对str和str1进行修改,也就没有改变值会影响另外一个的问题,因为改变值
+只能是改变指针的指向,另一个指针仍旧指向之前的内存地址,所以不会受影响)
+            </code></pre>
+        <p><code>2.执行mutableCopy操作</code></p>
+        <pre><code>
+NSString* str = @"123";
+NSString* str2 = [str mutableCopy];
+NSMutableString* str3 = [str mutableCopy];
+对于NSString不可变字符串,mutableCopy返回的是一个新的内存地址是深拷贝,拷贝的是内容,使用
+NSString或NSMutableString类型的指针都可以接收.
+(因为是新的内存地址,所以对mutableCopy返回的值进行操作不会影响原始的数据,同时对原始数据
+操作不会影响当前)            
+        </code></pre>
+        <h3>二.NSMutableString</h3>
+        <p><code>1.执行copy操作</code></p>
+        <pre><code>
+NSMutableString* mutableStr = [NSMutableString stringWithString:@"mutableStr"];
+NSMutableString* mutableStr1 = [mutableStr copy];
+NSString* mutableStr2 = [mutableStr copy];
+对NSMutableString可变字符串,执行copy会返回一个不可变的字符串,是深复制,会返回一个新的内存地址,
+    mutableStr1执行可变字符串的操作会报错.
+(因为是新的内存地址,所以对原始数据或copy生成的数据进行操作不会相互影响)
+        </code></pre>
+        <p><code>2.执行mutableCopy操作</code></p>
+        <pre><code>
+NSMutableString* mutableStr = [NSMutableString stringWithString:@"mutableStr"];    
+NSMutableString* mutableStr1 = [mutableStr mutableCopy];
+NSString* mutableStr2 = [mutableStr mutableCopy];
+对NSMutableString可变字符串,执行mutableCopy会返回一个可变的字符串,是深复制,会返回一个
+新的内存地址.可以使用NSString或NSMutableString类型的指针接收.
+(因为是新的内存地址,所以对原始数据或mutableCopy生成的数据进行操作不会相互影响)
+        </code></pre>
+        <h3>三.NSArray</h3>
+        <p><code>1.执行copy操作</code></p>
+        <pre><code>
+NSArray* arr = @[@"1",@"2"];
+NSArray* arrCopy = [arr copy];
+//NSMutableArray* arrCopy1 = [arr copy];
+对NSArray不可变数组,执行copy操作是指针复制,不同的指针指向同一块的内存地址,只是引用计数加1,
+copy返回的是不可变数组,只能使用NSArray指针类型去接收
+(因为是不可变所以不能对arr和arrCopy进行修改,也就没有改变值会影响另外一个的问题,因为改变值
+只能是改变指针的指向,另一个指针仍旧指向之前的内存地址,所以不会受影响)            
+        </code></pre>
+        <p><code>2.执行mutableCopy操作</code></p>
+        <pre><code>
+NSArray* arr = @[@"1",@"2"];
+NSArray* arrCopy = [arr mutableCopy];
+NSMutableArray* arrCopy1 = [arr mutableCopy];
+对于NSArray不可变数组,mutableCopy返回的是一个新的内存地址是深拷贝,拷贝的是内容,使用
+NSArray或NSMutableArray类型的指针都可以接收.
+(因为是新的内存地址,所以对mutableCopy返回的值进行操作不会影响原始的数据,同时对原始数据
+操作不会影响当前)
+        </code></pre>
+        <h3>四.NSMutableArray</h3>
+        <p><code>1.执行copy操作</code></p>
+        <pre><code>
+NSMutableArray* arr = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
+NSArray* arrCopy = [arr copy];
+NSMutableArray* arrCopy1 = [arr copy];
+对NSMutableArray可变数组,执行copy会返回一个不可变的数组,是深复制,会返回一个新的内存地址,
+ arrCopy1执行可变字符串的操作会报错.
+(因为是新的内存地址,所以对原始数据或copy生成的数据进行操作不会相互影响)
+        </code></pre>
+        <p><code>2.执行mutableCopy操作</code></p>
+        <pre><code>
+NSMutableArray* arr = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
+NSArray* arrCopy = [arr mutableCopy];
+NSMutableArray* arrCopy1 = [arr mutableCopy];
+对NSMutableArray可变数组,执行mutableCopy会返回一个可变的数组,是深复制,会返回一个
+新的内存地址.可以使用NSArray或NSMutableArray类型的指针接收.
+(因为是新的内存地址,所以对原始数据或mutableCopy生成的数据进行操作不会相互影响)
+        </code></pre>
+        <h3>五.NSSet</h3>
+        <p><code>1.执行copy操作</code></p>
+        <pre><code>
+NSSet* set = [NSSet setWithObjects:obj,obj1,obj2, nil];
+NSSet* set1 = [set copy];
+NSMutableSet* set2 = [set copy];
+NSLog(@"%p,%p",set,&set);
+NSLog(@"%p,%p",set1,&set1);
+//0x28221aaf0,0x16d37f890
+//0x28221aaf0,0x16d37f888
+
+for (DDCopyAndMutableTest* test in set) {
+    NSLog(@"%p,%p",test,&test);
+}
+//0x28221bf60,0x16d37f878
+//0x28221aa30,0x16d37f878
+//0x28221aa00,0x16d37f878
+for (DDCopyAndMutableTest* test in set1) {
+    NSLog(@"%p,%p",test,&test);
+}
+//0x28221bf60,0x16d37f830
+//0x28221aa30,0x16d37f830
+//0x28221aa00,0x16d37f830
+
+对NSSet不可变集合进行copy操作,得出的是NSSet不可变集合,只是考了指针,所以是浅拷贝,里面存储
+的对象是指针拷贝,也是浅拷贝,改变对象的属性对原始和现在的数据都有影响.
+        </code></pre>
+        <p><code>2.执行mutableCopy操作</code></p>
+        <pre><code>
+NSSet* set = [NSSet setWithObjects:obj,obj1,obj2, nil];
+NSSet* set1 = [set mutableCopy];
+NSMutableSet* set2 = [set mutableCopy];
+NSLog(@"%p,%p",set,&set);
+NSLog(@"%p,%p",set1,&set1);
+//0x2812f1950,0x16d8b7890
+//0x281c8f000,0x16d8b7888
+for (DDCopyAndMutableTest* test in set) {
+    NSLog(@"%p,%p",test,&test);
+}
+//0x280d5cc60,0x16adff878
+//0x280d5cd20,0x16adff878
+//0x280d5cc00,0x16adff878
+for (DDCopyAndMutableTest* test in set1) {
+    NSLog(@"%p,%p",test,&test);
+}
+//0x280d5cc00,0x16adff830
+//0x280d5cc60,0x16adff830
+//0x280d5cd20,0x16adff830
+
+对NSSet不可变集合进行mutableCopy操作,进行的是深拷贝,拷贝的是内容返回的是一个新的内存地址,
+可以使用NSSet或NSMutableSet接收,改变对象的属性对原始和现在的数据都有影响.
+        </code></pre>
+        <h3>六.NSMutableSet</h3>
+        <p><code>1.执行copy操作</code></p>
+        <pre><code>
+代码不重复写了,性质和NSMutableArray一样是深拷贝,会返回一个新的内存地址,返回的是NSSet类型.
+(因为是新的内存地址,所以对原始数据或copy生成的数据进行操作不会相互影响)
+        </code></pre>
+        <p><code>2.执行mutableCopy操作</code></p>
+        <pre><code>
+对NSMutableSet执行mutableCopy会返回一个可变的集合,是深复制,会返回一个
+新的内存地址.可以使用NSSet或NSMutableSet类型的指针接收.
+(因为是新的内存地址,所以对原始数据或mutableCopy生成的数据进行操作不会相互影响)
+        </code></pre>
+        <h3>
+            对于容器(Array.Set...)而言,如果存储的是对象,无论是copy或mutableCopy操作生成的,对其内部的对象进行操作是会影响到原来的数据的.同理操作原始数据也会影响当前的数据.
+        </h3>
+
+
+    <div>
+</body>
+</html>

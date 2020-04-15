@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    DDWebView * webView = [[DDWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [webView loadUrlWithName:@"copyAndMutableCopy"];
+
+    [self.view addSubview:webView];
+    
+
     DDCopyAndMutableTest* obj = [[DDCopyAndMutableTest alloc]init];
     obj.strCopy = @"111";
     obj.strStrong = @"222";

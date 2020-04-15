@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DDKVCViewController : DDRootViewController
 
+- (void)printName;
+- (void)changeName;
+
 @end
 
 NS_ASSUME_NONNULL_END

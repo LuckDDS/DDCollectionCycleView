@@ -23,6 +23,8 @@
 #import "DDKVCViewController.h"
 #import "DDCopyAndMutableCopyController.h"
 #import "DDObjectRecognitionViewController.h"
+#import "DDUIBezierPathViewController.h"
+#import "DDCoreGraphicsViewController.h"
 @interface DDHomeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *homeCollectionView;
@@ -46,7 +48,7 @@
 }
 
 - (void)requestData{
-    NSArray *headers = @[@"UICollectionViewLayout",@"CIFeature",@"Vision",@"Basics",@"ObjectRecognition"];
+    NSArray *headers = @[@"UICollectionViewLayout",@"drawView",@"CIFeature",@"Vision",@"Basics",@"ObjectRecognition"];
     
     for (int i = 0; i < headers.count; i ++) {
         NSMutableDictionary * unitDict = [NSMutableDictionary new];
@@ -54,12 +56,14 @@
         if (i == 0) {
             [unitDict setValue:@[@"自定义瀑布流",@"轮播图"] forKey:@"content"];
         }else if (i == 1){
-            [unitDict setValue:@[@"CIFeatureTypeFace(人脸识别)"] forKey:@"content"];
+            [unitDict setValue:@[@"coreGraphics",@"UIBezierPath"] forKey:@"content"];
         }else if (i == 2){
             [unitDict setValue:@[@"Vision",@"MobileNet"] forKey:@"content"];
         }else if (i == 3){
             [unitDict setValue:@[@"堆栈",@"C语言特性",@"Struct(结构体)",@"Block",@"KVC",@"KVO",@"copy和mutableCopy",@"GCD",@"NSThread",@"NSOperation",@"锁",@"socket",@"链表",@"MVC",@"MVVM",@"MVP"] forKey:@"content"];
         }else if (i == 4){
+            [unitDict setValue:@[@"CIFeatureTypeFace(人脸识别)"] forKey:@"content"];
+        }else if (i == 5){
             [unitDict setValue:@[@"ObjectRecognition"] forKey:@"content"];
         }
         [self.allDataArr addObject:unitDict];
@@ -97,54 +101,58 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    DDRootViewController *rootVC;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            DDCollectionLayoutController *layoutController = [[DDCollectionLayoutController alloc]init];
-            [self.navigationController pushViewController:layoutController animated:YES];
+            rootVC = [[DDCollectionLayoutController alloc]init];
         }else{
-            DDCollectionCycleController *cycleController = [[DDCollectionCycleController alloc]init];
-            [self.navigationController pushViewController:cycleController animated:YES];
+            rootVC = [[DDCollectionCycleController alloc]init];
         }
     }else if (indexPath.section == 1){
-        DDCIFeatureViewController *featureController = [[DDCIFeatureViewController alloc]init];
-        featureController.featureType = indexPath.row;
-        [self.navigationController pushViewController:featureController animated:YES];
+        if (indexPath.row == 0) {
+            rootVC = [[DDCoreGraphicsViewController alloc]init];
+        }else if (indexPath.row == 1){
+            rootVC = [[DDUIBezierPathViewController alloc]init];
+        }
+
     }else if (indexPath.section == 2){
         if (indexPath.row == 0) {
-            DDVisionController *visionController = [[DDVisionController alloc]init];
-            [self.navigationController pushViewController:visionController animated:YES];
+            rootVC = [[DDVisionController alloc]init];
         }else{
-            DDMobileNetController *mobileController = [[DDMobileNetController alloc]init];
-            [self.navigationController pushViewController:mobileController animated:YES];
+            rootVC = [[DDMobileNetController alloc]init];
         }
     }else if (indexPath.section == 3){
         if (indexPath.row == 0) {
-            DDHeapAndStackController *heapAndStackController = [[DDHeapAndStackController alloc]init];
-            [self.navigationController pushViewController:heapAndStackController animated:YES];
+            rootVC = [[DDHeapAndStackController alloc]init];
         }else if(indexPath.row == 1){
-            DDCfeatureViewController *cfeatureController = [[DDCfeatureViewController alloc]init];
-            [self.navigationController pushViewController:cfeatureController animated:YES];
+            rootVC = [[DDCfeatureViewController alloc]init];
         }else if (indexPath.row == 2){
-            DDStructViewController *structController = [[DDStructViewController alloc]init];
-            [self.navigationController pushViewController:structController animated:YES];
+            rootVC = [[DDStructViewController alloc]init];
         }else if(indexPath.row == 3){
-            DDBlockViewController *blockController = [[DDBlockViewController alloc]init];
-            [self.navigationController pushViewController:blockController animated:YES];
+            rootVC = [[DDBlockViewController alloc]init];
         }else if (indexPath.row == 4){
-            DDKVCViewController *kvcController = [[DDKVCViewController alloc]init];
-            [self.navigationController pushViewController:kvcController animated:YES];
-        }else if(indexPath.row == 5){
-            DDKVOViewController *kvoController = [[DDKVOViewController alloc]init];
+            rootVC = [[DDKVCViewController alloc]init];
+            [(DDKVCViewController*)rootVC changeName];
+            [(DDKVCViewController*)rootVC setValue:@"董" forKey:@"globalName"];
+            [(DDKVCViewController*)rootVC setValue:@"德" forKey:@"implementationName"];
+            [(DDKVCViewController*)rootVC setValue:@"帅" forKey:@"privateName"];
+            [(DDKVCViewController*)rootVC setValue:@"666" forKey:@"999"];
+            [(DDKVCViewController*)rootVC setValue:@"董" forKeyPath:@"globalName"];
             
-            [self.navigationController pushViewController:kvoController animated:YES];
+            [(DDKVCViewController*)rootVC printName];
+        }else if(indexPath.row == 5){
+            rootVC = [[DDKVOViewController alloc]init];
         }else if (indexPath.row == 6){
-            DDCopyAndMutableCopyController *copyController = [[DDCopyAndMutableCopyController alloc]init];
-            [self.navigationController pushViewController:copyController animated:YES];
+            rootVC = [[DDCopyAndMutableCopyController alloc]init];
         }
     }else if (indexPath.section == 4){
-        DDObjectRecognitionViewController* ObjectRecognitionController = [[DDObjectRecognitionViewController alloc]init];
-        [self.navigationController pushViewController:ObjectRecognitionController animated:YES];
+        rootVC = [[DDCIFeatureViewController alloc]init];
+        ((DDCIFeatureViewController*)rootVC).featureType = indexPath.row;
+
+    }else if (indexPath.section == 5){
+        rootVC = [[DDObjectRecognitionViewController alloc]init];
     }
+    [self.navigationController pushViewController:rootVC animated:YES];
 }
 
 - (DDCollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{

@@ -37,6 +37,7 @@ struct Student{
     [self makeLinkList];
     Teacher teacher = {@"123"};
     
+    //使用指针传值更快
     [self structAsParam1:teacher];
     [self structAsParam:&teacher];
     NSLog(@"%@",teacher.name);
@@ -54,7 +55,7 @@ struct Student{
 //传递的是指针
 - (void)structAsParam:(Teacher *)teacher{
     NSLog(@"%@",teacher->name);
-    teacher->name = @"原始参数改变";
+    (*teacher).name = @"原始参数改变";
 }
 
 - (void)makeLinkList{
