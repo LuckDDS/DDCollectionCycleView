@@ -15,6 +15,12 @@ typedef enum : NSUInteger {
     CoreGraphicsArcType,
     CoreGraphicsClockType,
     CoreGraphicsAnimalType,
+    CoreGraphicsScaleType,
+    CoreGraphicsTranslateType,
+    CoreGraphicsRotateType,
+    CoreGraphicsCTMType
+    
+    
     
     
 } CoreGraphicsType;

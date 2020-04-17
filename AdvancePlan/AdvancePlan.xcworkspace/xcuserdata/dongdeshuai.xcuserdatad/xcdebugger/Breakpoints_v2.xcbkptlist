@@ -137,8 +137,8 @@
             filePath = "AdvancePlan/Main/DrawView/DDCoreGraphicsView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-drawClock"
             landmarkType = "7">
          </BreakpointContent>
@@ -153,8 +153,8 @@
             filePath = "AdvancePlan/Main/DrawView/DDCoreGraphicsView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "-getPoint:radius:center:"
             landmarkType = "7">
          </BreakpointContent>
@@ -169,9 +169,9 @@
             filePath = "AdvancePlan/Main/DrawView/DDCoreGraphicsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-beginAnimal"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-buildCanvas"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,10 +185,10 @@
             filePath = "AdvancePlan/Main/DrawView/DDCoreGraphicsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-drawAnimalView"
-            landmarkType = "7">
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "DDCoreGraphicsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -201,8 +201,8 @@
             filePath = "AdvancePlan/Main/DrawView/DDCoreGraphicsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "-buildCanvas"
             landmarkType = "7">
          </BreakpointContent>
@@ -217,9 +217,25 @@
             filePath = "AdvancePlan/Main/DrawView/DDCoreGraphicsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-buildCanvas"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D70677A-64BF-4DD8-9ED6-F981B3B16435"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdvancePlan/Main/DrawView/DDCGAffineTransformTestView.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-drawRect:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

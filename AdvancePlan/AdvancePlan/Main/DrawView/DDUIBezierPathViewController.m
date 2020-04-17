@@ -16,6 +16,7 @@ static int num = 0;
 {
     DDUIBezierPathTestView *bezierView;
     CAShapeLayer * layer;
+    CAShapeLayer *m_layer;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,6 +30,13 @@ static int num = 0;
     [self.view addSubview:btn];
     [self buildArcAnimal];
     [self buildLoad];
+    [self testAnimal];
+    
+    UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(290, 400, 100, 40)];
+    btn1.backgroundColor = [UIColor magentaColor];
+    [btn1 setTitle:@"动画1" forState:(UIControlStateNormal)];
+    [btn1 addTarget:self action:@selector(animalTestOne) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:btn1];
 
     // Do any additional setup after loading the view.
 }
@@ -146,6 +154,49 @@ static int num = 0;
     
 }
 
+- (void)testAnimal{
+
+    UIBezierPath * m_path = [UIBezierPath bezierPath];
+    
+    [m_path addArcWithCenter:CGPointMake(100, 100) radius:100 startAngle:0 endAngle:2*M_PI clockwise:YES];
+    [m_path closePath];
+    m_layer = [CAShapeLayer layer];
+    m_layer.frame = CGRectMake(0, 150, 200, 200);
+    m_layer.backgroundColor = [UIColor blackColor].CGColor;
+    m_layer.fillColor = [UIColor magentaColor].CGColor;
+    m_layer.strokeColor = [UIColor redColor].CGColor;
+    m_layer.path = m_path.CGPath;
+    [layer addSublayer:m_layer];
+    
+}
+
+- (void)animalTestOne{
+
+    CABasicAnimation *baseAnimal = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    baseAnimal.duration = 2;
+    //byValue
+    baseAnimal.fromValue = @(0);
+    baseAnimal.toValue = @(2*M_PI);
+    baseAnimal.removedOnCompletion = NO;//是否移除动画结束后的状态,和fillMode共同使用
+    baseAnimal.repeatCount = MAXINTERP;
+//    baseAnimal.autoreverses = YES;//是否按原动画回到之前的状态默认为No就会刷的一下就回去了
+    baseAnimal.fillMode = kCAFillModeForwards;//fillMode结束后是否返回
+    baseAnimal.beginTime = CACurrentMediaTime();
+    [m_layer addAnimation:baseAnimal forKey:@""];
+    
+    //position和anchorPoint永远是重合的
+    //position是中心点(center)相对于父层的位置坐标,anchorPoint是决定中心点(center)位置的
+    //改变anchorPoint对图形的position没有影响,但是图形的位置会发生变化,因为图形的中心点的相对位置改变了,
+    //改变position对图像的anchorPoint没有影响,但是图形相对于父层的位置会发生变化
+    NSLog(@"%@",NSStringFromCGPoint(m_layer.position));
+    NSLog(@"%@",NSStringFromCGPoint(m_layer.anchorPoint));
+
+    m_layer.anchorPoint = CGPointMake(0, 0);
+    m_layer.position = CGPointMake(300, 300);
+    
+    NSLog(@"%@",NSStringFromCGPoint(m_layer.position));
+    NSLog(@"%@",NSStringFromCGPoint(m_layer.anchorPoint));
+}
 /*
 #pragma mark - Navigation
 

@@ -42,6 +42,7 @@
 		4589F7AA241E105D00266515 /* base.css in Resources */ = {isa = PBXBuildFile; fileRef = 4589F7A8241E105D00266515 /* base.css */; };
 		4589F7AC241E3A9E00266515 /* cfeature.html in Resources */ = {isa = PBXBuildFile; fileRef = 4589F7AB241E3A9E00266515 /* cfeature.html */; };
 		4589F7B0241E3AC500266515 /* DDCfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589F7AF241E3AC500266515 /* DDCfeatureViewController.m */; };
+		45987C9624497F4C00019582 /* DDCGAffineTransformTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45987C9524497F4C00019582 /* DDCGAffineTransformTestView.m */; };
 		459FE470241884B8004317BB /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 459FE46F241884B8004317BB /* MobileNetV2.mlmodel */; };
 		45A0F79D2423166900B5AC0C /* DDKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0F79C2423166900B5AC0C /* DDKVOViewController.m */; };
 		45A0F7A12423173500B5AC0C /* DDKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0F7A02423173500B5AC0C /* DDKVCViewController.m */; };
@@ -148,6 +149,8 @@
 		4589F7AB241E3A9E00266515 /* cfeature.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cfeature.html; sourceTree = "<group>"; };
 		4589F7AE241E3AC500266515 /* DDCfeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCfeatureViewController.h; sourceTree = "<group>"; };
 		4589F7AF241E3AC500266515 /* DDCfeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCfeatureViewController.m; sourceTree = "<group>"; };
+		45987C9424497F4C00019582 /* DDCGAffineTransformTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCGAffineTransformTestView.h; sourceTree = "<group>"; };
+		45987C9524497F4C00019582 /* DDCGAffineTransformTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCGAffineTransformTestView.m; sourceTree = "<group>"; };
 		459FE46F241884B8004317BB /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		45A0F79B2423166900B5AC0C /* DDKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDKVOViewController.h; sourceTree = "<group>"; };
 		45A0F79C2423166900B5AC0C /* DDKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDKVOViewController.m; sourceTree = "<group>"; };
@@ -458,6 +461,8 @@
 				45A4B337243F03D200E56234 /* DDCoreGraphicsViewController.m */,
 				45A4B33C243F0B7200E56234 /* DDCoreGraphicsView.h */,
 				45A4B33D243F0B7200E56234 /* DDCoreGraphicsView.m */,
+				45987C9424497F4C00019582 /* DDCGAffineTransformTestView.h */,
+				45987C9524497F4C00019582 /* DDCGAffineTransformTestView.m */,
 				45A4B339243F03EE00E56234 /* DDUIBezierPathViewController.h */,
 				45A4B33A243F03EE00E56234 /* DDUIBezierPathViewController.m */,
 				4515BD9B244597C700A80DC2 /* DDUIBezierPathTestView.h */,
@@ -718,6 +723,7 @@
 				4589F7A5241E0E8400266515 /* DDWebView.m in Sources */,
 				451F5D5A2404D0AA00DC417E /* DDCollectionViewLayout.m in Sources */,
 				4520A025241A1A1100CDABCB /* DDMobileNetController.m in Sources */,
+				45987C9624497F4C00019582 /* DDCGAffineTransformTestView.m in Sources */,
 				4587BBF923FF795A00685367 /* DDNavigationController.m in Sources */,
 				4570F865243C59E90067A80F /* DDKVCTestObject.m in Sources */,
 				45ACC183240CB139007655D9 /* DDCIFeatureViewController.m in Sources */,
