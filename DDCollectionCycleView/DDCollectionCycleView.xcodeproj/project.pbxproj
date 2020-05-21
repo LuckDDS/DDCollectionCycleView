@@ -166,16 +166,16 @@
 		456EC4662475333600DB2321 /* CollectionCycleView */ = {
 			isa = PBXGroup;
 			children = (
-				456EC4672475333600DB2321 /* DDCollectionCycleController.m */,
-				456EC4682475333600DB2321 /* DDCollectionCycleView.h */,
-				456EC4692475333600DB2321 /* DDCollectionCycleLayout.m */,
-				456EC46A2475333600DB2321 /* DDCollectionCycleBackView.m */,
-				456EC46B2475333600DB2321 /* DDCollectionViewCycleCell.m */,
-				456EC46C2475333600DB2321 /* DDCollectionCycleView.m */,
 				456EC46D2475333600DB2321 /* DDCollectionCycleController.h */,
-				456EC46E2475333600DB2321 /* DDCollectionCycleBackView.h */,
+				456EC4672475333600DB2321 /* DDCollectionCycleController.m */,
 				456EC46F2475333600DB2321 /* DDCollectionCycleLayout.h */,
+				456EC4692475333600DB2321 /* DDCollectionCycleLayout.m */,
 				456EC4702475333600DB2321 /* DDCollectionViewCycleCell.h */,
+				456EC46B2475333600DB2321 /* DDCollectionViewCycleCell.m */,
+				456EC4682475333600DB2321 /* DDCollectionCycleView.h */,
+				456EC46C2475333600DB2321 /* DDCollectionCycleView.m */,
+				456EC46E2475333600DB2321 /* DDCollectionCycleBackView.h */,
+				456EC46A2475333600DB2321 /* DDCollectionCycleBackView.m */,
 			);
 			path = CollectionCycleView;
 			sourceTree = "<group>";
@@ -194,7 +194,6 @@
 				FC11A2CAC3BA9A7BC732D7D7 /* Pods-DDCollectionCycleView.debug.xcconfig */,
 				1241DEF1FECF6596531C563D /* Pods-DDCollectionCycleView.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
